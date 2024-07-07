@@ -14,6 +14,18 @@
 		65B2A4E32C391A3E00F14762 /* neoBankCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A4E22C391A3E00F14762 /* neoBankCloneUITests.swift */; };
 		65B2A4E52C391A3E00F14762 /* neoBankCloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A4E42C391A3E00F14762 /* neoBankCloneUITestsLaunchTests.swift */; };
 		65B2A4F32C391B3500F14762 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A4F22C391B3500F14762 /* LandingPageViewController.swift */; };
+		65B2A5382C39354900F14762 /* LandingPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5372C39354900F14762 /* LandingPageInteractor.swift */; };
+		65B2A53A2C39355C00F14762 /* LandingPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5392C39355C00F14762 /* LandingPagePresenter.swift */; };
+		65B2A53C2C39357B00F14762 /* LandingPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A53B2C39357B00F14762 /* LandingPageRouter.swift */; };
+		65B2A5422C393CEA00F14762 /* RestApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5412C393CEA00F14762 /* RestApiRequest.swift */; };
+		65B2A5462C393D3B00F14762 /* RestApiRequestInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5452C393D3B00F14762 /* RestApiRequestInput.swift */; };
+		65B2A5482C393FCD00F14762 /* RestApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5472C393FCD00F14762 /* RestApiServices.swift */; };
+		65B2A54B2C39528D00F14762 /* NeoProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A54A2C39528D00F14762 /* NeoProductModel.swift */; };
+		65B2A54D2C398DE400F14762 /* DynamicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A54C2C398DE400F14762 /* DynamicTableView.swift */; };
+		65B2A5502C398E2100F14762 /* NeoProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A54F2C398E2100F14762 /* NeoProductTableViewCell.swift */; };
+		65B2A5522C39953F00F14762 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5512C39953F00F14762 /* UIColor+Extensions.swift */; };
+		65B2A5542C39A1A100F14762 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5532C39A1A100F14762 /* UILabel+Extensions.swift */; };
+		65B2A5562C39A3F700F14762 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5552C39A3F700F14762 /* Int+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +57,18 @@
 		65B2A4E22C391A3E00F14762 /* neoBankCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = neoBankCloneUITests.swift; sourceTree = "<group>"; };
 		65B2A4E42C391A3E00F14762 /* neoBankCloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = neoBankCloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		65B2A4F22C391B3500F14762 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
+		65B2A5372C39354900F14762 /* LandingPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageInteractor.swift; sourceTree = "<group>"; };
+		65B2A5392C39355C00F14762 /* LandingPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPagePresenter.swift; sourceTree = "<group>"; };
+		65B2A53B2C39357B00F14762 /* LandingPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageRouter.swift; sourceTree = "<group>"; };
+		65B2A5412C393CEA00F14762 /* RestApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApiRequest.swift; sourceTree = "<group>"; };
+		65B2A5452C393D3B00F14762 /* RestApiRequestInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApiRequestInput.swift; sourceTree = "<group>"; };
+		65B2A5472C393FCD00F14762 /* RestApiServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApiServices.swift; sourceTree = "<group>"; };
+		65B2A54A2C39528D00F14762 /* NeoProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoProductModel.swift; sourceTree = "<group>"; };
+		65B2A54C2C398DE400F14762 /* DynamicTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableView.swift; sourceTree = "<group>"; };
+		65B2A54F2C398E2100F14762 /* NeoProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoProductTableViewCell.swift; sourceTree = "<group>"; };
+		65B2A5512C39953F00F14762 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		65B2A5532C39A1A100F14762 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		65B2A5552C39A3F700F14762 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +119,10 @@
 		65B2A4C02C391A3C00F14762 /* neoBankClone */ = {
 			isa = PBXGroup;
 			children = (
+				65B2A4F42C3933AB00F14762 /* App */,
 				65B2A4F12C391AFD00F14762 /* Module */,
-				65B2A4C12C391A3C00F14762 /* AppDelegate.swift */,
-				65B2A4C32C391A3C00F14762 /* SceneDelegate.swift */,
-				65B2A4CA2C391A3D00F14762 /* Assets.xcassets */,
+				65B2A4F82C39340500F14762 /* Class */,
+				65B2A4F92C39340F00F14762 /* Resources */,
 				65B2A4CF2C391A3D00F14762 /* Info.plist */,
 			);
 			path = neoBankClone;
@@ -124,9 +148,133 @@
 		65B2A4F12C391AFD00F14762 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				65B2A4F22C391B3500F14762 /* LandingPageViewController.swift */,
+				65B2A4F72C3933CE00F14762 /* Payment */,
+				65B2A4F62C3933C000F14762 /* Detail */,
+				65B2A4F52C3933BA00F14762 /* Landing */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		65B2A4F42C3933AB00F14762 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				65B2A4C32C391A3C00F14762 /* SceneDelegate.swift */,
+				65B2A4C12C391A3C00F14762 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		65B2A4F52C3933BA00F14762 /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				65B2A5492C39527300F14762 /* Entity */,
+				65B2A5352C39352600F14762 /* View */,
+				65B2A5372C39354900F14762 /* LandingPageInteractor.swift */,
+				65B2A5392C39355C00F14762 /* LandingPagePresenter.swift */,
+				65B2A53B2C39357B00F14762 /* LandingPageRouter.swift */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		65B2A4F62C3933C000F14762 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		65B2A4F72C3933CE00F14762 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		65B2A4F82C39340500F14762 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				65B2A4FA2C39342300F14762 /* Common */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		65B2A4F92C39340F00F14762 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				65B2A4CA2C391A3D00F14762 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		65B2A4FA2C39342300F14762 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				65B2A4FE2C39345B00F14762 /* Utils */,
+				65B2A4FD2C39344D00F14762 /* Networking */,
+				65B2A4FC2C39344800F14762 /* UI */,
+				65B2A4FB2C39342E00F14762 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		65B2A4FB2C39342E00F14762 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				65B2A5552C39A3F700F14762 /* Int+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		65B2A4FC2C39344800F14762 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				65B2A54C2C398DE400F14762 /* DynamicTableView.swift */,
+				65B2A5512C39953F00F14762 /* UIColor+Extensions.swift */,
+				65B2A5532C39A1A100F14762 /* UILabel+Extensions.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		65B2A4FD2C39344D00F14762 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				65B2A5412C393CEA00F14762 /* RestApiRequest.swift */,
+				65B2A5452C393D3B00F14762 /* RestApiRequestInput.swift */,
+				65B2A5472C393FCD00F14762 /* RestApiServices.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		65B2A4FE2C39345B00F14762 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		65B2A5352C39352600F14762 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				65B2A54E2C398DF600F14762 /* Cell */,
+				65B2A4F22C391B3500F14762 /* LandingPageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		65B2A5492C39527300F14762 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				65B2A54A2C39528D00F14762 /* NeoProductModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		65B2A54E2C398DF600F14762 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				65B2A54F2C398E2100F14762 /* NeoProductTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +407,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				65B2A4C22C391A3C00F14762 /* AppDelegate.swift in Sources */,
+				65B2A5482C393FCD00F14762 /* RestApiServices.swift in Sources */,
+				65B2A54D2C398DE400F14762 /* DynamicTableView.swift in Sources */,
+				65B2A5522C39953F00F14762 /* UIColor+Extensions.swift in Sources */,
+				65B2A53A2C39355C00F14762 /* LandingPagePresenter.swift in Sources */,
+				65B2A5462C393D3B00F14762 /* RestApiRequestInput.swift in Sources */,
+				65B2A5542C39A1A100F14762 /* UILabel+Extensions.swift in Sources */,
 				65B2A4C42C391A3C00F14762 /* SceneDelegate.swift in Sources */,
+				65B2A53C2C39357B00F14762 /* LandingPageRouter.swift in Sources */,
+				65B2A5562C39A3F700F14762 /* Int+Extensions.swift in Sources */,
+				65B2A5422C393CEA00F14762 /* RestApiRequest.swift in Sources */,
 				65B2A4F32C391B3500F14762 /* LandingPageViewController.swift in Sources */,
+				65B2A54B2C39528D00F14762 /* NeoProductModel.swift in Sources */,
+				65B2A5502C398E2100F14762 /* NeoProductTableViewCell.swift in Sources */,
+				65B2A5382C39354900F14762 /* LandingPageInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
