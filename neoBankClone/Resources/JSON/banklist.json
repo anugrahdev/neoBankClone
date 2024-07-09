@@ -1,0 +1,55 @@
+{
+  "data": [
+    {
+      "payment_method": "Virtual Account",
+      "channels": [
+        {
+          "name": "Bank BCA",
+          "image_url": "bca"
+        },
+        {
+          "name": "Bank BRI",
+          "image_url": "bri"
+        },
+        {
+          "name": "Bank CIMB Niaga",
+          "image_url": "cimb"
+        }
+      ]
+    },
+    {
+      "payment_method": "Credit Card",
+      "channels": [
+        {
+          "name": "Visa",
+          "image_url": "wallet"
+        },
+        {
+          "name": "MasterCard",
+          "image_url": "wallet"
+        },
+        {
+          "name": "Amex",
+          "image_url": "wallet"
+        }
+      ]
+    },
+    {
+      "payment_method": "E-Wallet",
+      "channels": [
+        {
+          "name": "OVO",
+          "image_url": "wallet"
+        },
+        {
+          "name": "GoPay",
+          "image_url": "wallet"
+        },
+        {
+          "name": "DANA",
+          "image_url": "wallet"
+        }
+      ]
+    }
+  ]
+}

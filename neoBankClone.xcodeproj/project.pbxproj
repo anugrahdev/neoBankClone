@@ -51,6 +51,14 @@
 		65BAE9552C3C48AA0066AD58 /* ProductPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE9542C3C48AA0066AD58 /* ProductPaymentViewController.swift */; };
 		65BAE9572C3C48E50066AD58 /* ProductPaymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE9562C3C48E50066AD58 /* ProductPaymentRouter.swift */; };
 		65BAE95B2C3CE5740066AD58 /* NeoProductPaymentHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE95A2C3CE5740066AD58 /* NeoProductPaymentHeaderTableViewCell.swift */; };
+		65BAE95D2C3CFD110066AD58 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE95C2C3CFD110066AD58 /* PaddingLabel.swift */; };
+		65BAE95F2C3CFFF90066AD58 /* NeoProductPaymentListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE95E2C3CFFF90066AD58 /* NeoProductPaymentListTableViewCell.swift */; };
+		65BAE9612C3D6D320066AD58 /* NeoProductPaymentMethodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE9602C3D6D320066AD58 /* NeoProductPaymentMethodTableViewCell.swift */; };
+		65BAE9652C3D80150066AD58 /* ProductPaymentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE9642C3D80150066AD58 /* ProductPaymentInteractor.swift */; };
+		65BAE9672C3D82220066AD58 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE9662C3D82220066AD58 /* JSONDecoder.swift */; };
+		65BAE9692C3D84A80066AD58 /* PaymentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE9682C3D84A80066AD58 /* PaymentDataModel.swift */; };
+		65BAE96B2C3D84CA0066AD58 /* ProductPaymentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE96A2C3D84CA0066AD58 /* ProductPaymentPresenter.swift */; };
+		65BAE9A32C3D88E70066AD58 /* banklist.json in Resources */ = {isa = PBXBuildFile; fileRef = 65BAE9A22C3D88E60066AD58 /* banklist.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +127,14 @@
 		65BAE9542C3C48AA0066AD58 /* ProductPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPaymentViewController.swift; sourceTree = "<group>"; };
 		65BAE9562C3C48E50066AD58 /* ProductPaymentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPaymentRouter.swift; sourceTree = "<group>"; };
 		65BAE95A2C3CE5740066AD58 /* NeoProductPaymentHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoProductPaymentHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		65BAE95C2C3CFD110066AD58 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		65BAE95E2C3CFFF90066AD58 /* NeoProductPaymentListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoProductPaymentListTableViewCell.swift; sourceTree = "<group>"; };
+		65BAE9602C3D6D320066AD58 /* NeoProductPaymentMethodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoProductPaymentMethodTableViewCell.swift; sourceTree = "<group>"; };
+		65BAE9642C3D80150066AD58 /* ProductPaymentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPaymentInteractor.swift; sourceTree = "<group>"; };
+		65BAE9662C3D82220066AD58 /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
+		65BAE9682C3D84A80066AD58 /* PaymentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDataModel.swift; sourceTree = "<group>"; };
+		65BAE96A2C3D84CA0066AD58 /* ProductPaymentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPaymentPresenter.swift; sourceTree = "<group>"; };
+		65BAE9A22C3D88E60066AD58 /* banklist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = banklist.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +260,8 @@
 				65BAE9532C3C488D0066AD58 /* View */,
 				65BAE9522C3C48880066AD58 /* Entity */,
 				65BAE9562C3C48E50066AD58 /* ProductPaymentRouter.swift */,
+				65BAE9642C3D80150066AD58 /* ProductPaymentInteractor.swift */,
+				65BAE96A2C3D84CA0066AD58 /* ProductPaymentPresenter.swift */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -259,6 +277,7 @@
 		65B2A4F92C39340F00F14762 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				65BAE9622C3D71CA0066AD58 /* JSON */,
 				65B2A5712C3A9D5900F14762 /* Font */,
 				65B2A4CA2C391A3D00F14762 /* Assets.xcassets */,
 			);
@@ -299,6 +318,7 @@
 				65BAE93E2C3BDD3A0066AD58 /* UITextField+Extensions.swift */,
 				65BAE9472C3C22340066AD58 /* HalfScreenPresentationController.swift */,
 				65BAE9492C3C41770066AD58 /* LeftAlignedCollectionViewFlowLayout.swift */,
+				65BAE95C2C3CFD110066AD58 /* PaddingLabel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -309,6 +329,7 @@
 				65B2A5412C393CEA00F14762 /* RestApiRequest.swift */,
 				65B2A5452C393D3B00F14762 /* RestApiRequestInput.swift */,
 				65B2A5472C393FCD00F14762 /* RestApiServices.swift */,
+				65BAE9662C3D82220066AD58 /* JSONDecoder.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -403,6 +424,7 @@
 		65BAE9522C3C48880066AD58 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				65BAE9682C3D84A80066AD58 /* PaymentDataModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -420,8 +442,18 @@
 			isa = PBXGroup;
 			children = (
 				65BAE95A2C3CE5740066AD58 /* NeoProductPaymentHeaderTableViewCell.swift */,
+				65BAE95E2C3CFFF90066AD58 /* NeoProductPaymentListTableViewCell.swift */,
+				65BAE9602C3D6D320066AD58 /* NeoProductPaymentMethodTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		65BAE9622C3D71CA0066AD58 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				65BAE9A22C3D88E60066AD58 /* banklist.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -528,6 +560,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65BAE9A32C3D88E70066AD58 /* banklist.json in Resources */,
 				65B2A4CB2C391A3D00F14762 /* Assets.xcassets in Resources */,
 				65B2A5732C3A9D8000F14762 /* Poppins-Regular.ttf in Resources */,
 			);
@@ -569,9 +602,13 @@
 				65B2A5752C3AE49400F14762 /* NeoProductRolloverTableViewCell.swift in Sources */,
 				65BAE94D2C3C41A90066AD58 /* NominalCollectionViewCell.swift in Sources */,
 				65B2A53A2C39355C00F14762 /* LandingPagePresenter.swift in Sources */,
+				65BAE9652C3D80150066AD58 /* ProductPaymentInteractor.swift in Sources */,
+				65BAE9672C3D82220066AD58 /* JSONDecoder.swift in Sources */,
+				65BAE9692C3D84A80066AD58 /* PaymentDataModel.swift in Sources */,
 				65BAE9432C3C1EDD0066AD58 /* RolloverPopupModalViewController.swift in Sources */,
 				65B2A5612C3A5C6700F14762 /* ProductDetailViewController.swift in Sources */,
 				65B2A5462C393D3B00F14762 /* RestApiRequestInput.swift in Sources */,
+				65BAE9612C3D6D320066AD58 /* NeoProductPaymentMethodTableViewCell.swift in Sources */,
 				65B2A5542C39A1A100F14762 /* UILabel+Extensions.swift in Sources */,
 				65B2A4C42C391A3C00F14762 /* SceneDelegate.swift in Sources */,
 				65BAE93F2C3BDD3A0066AD58 /* UITextField+Extensions.swift in Sources */,
@@ -590,7 +627,10 @@
 				65B2A56A2C3A661400F14762 /* NeoProductDetailAmountTableViewCell.swift in Sources */,
 				65B2A56E2C3A7CB800F14762 /* CustomCellSeparatorView.swift in Sources */,
 				65B2A54B2C39528D00F14762 /* NeoProductModel.swift in Sources */,
+				65BAE95D2C3CFD110066AD58 /* PaddingLabel.swift in Sources */,
+				65BAE95F2C3CFFF90066AD58 /* NeoProductPaymentListTableViewCell.swift in Sources */,
 				65B2A5632C3A61CF00F14762 /* Theme.swift in Sources */,
+				65BAE96B2C3D84CA0066AD58 /* ProductPaymentPresenter.swift in Sources */,
 				65B2A5502C398E2100F14762 /* NeoProductTableViewCell.swift in Sources */,
 				65B2A5382C39354900F14762 /* LandingPageInteractor.swift in Sources */,
 			);

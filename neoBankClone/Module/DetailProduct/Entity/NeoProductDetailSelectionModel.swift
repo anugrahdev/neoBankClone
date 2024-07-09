@@ -8,5 +8,5 @@
 import Foundation
 
 struct NeoProductDetailSelectionModel {
-    var amount: String
+    var amount: Double
 }

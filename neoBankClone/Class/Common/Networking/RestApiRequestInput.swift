@@ -9,4 +9,5 @@ import Foundation
 
 protocol RestApiInputProtocol {
     func getLandingData<T: Codable>(completion: @escaping CompletionHandler<T>)
+    func getPaymentData<T: Codable>(completion: @escaping CompletionHandler<T>)
 }

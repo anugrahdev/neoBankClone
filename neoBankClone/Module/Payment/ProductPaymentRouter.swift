@@ -17,7 +17,16 @@ class ProductPaymentRouter: ProductPaymentRouterLogic {
     static func assembleModule(with data: NeoProductDetailSelectionModel) -> ProductPaymentViewController {
         let view = ProductPaymentViewController()
         let router = ProductPaymentRouter()
+        let interactor = ProductPaymentInteractor()
+        var presenter = ProductPaymentPresenter()
+        interactor.request = RestApiRequest()
+        presenter.view = view
+        view.interactor = interactor
         view.router = router
+        view.setProductPaymentData(with: data)
+        interactor.presenter = presenter
+        router.viewController = view
+        
         return view
     }
     

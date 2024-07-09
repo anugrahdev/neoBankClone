@@ -210,7 +210,7 @@ extension ProductDetailViewController: NeoProductRolloverTableViewCellDelegate, 
     func openButtonDidTapped() {
         let amountCell = tableView.cellForRow(at: IndexPath(row: 0, section: sections.firstIndex(where: { $0 == .amount }) ?? 0)) as? NeoProductDetailAmountTableViewCell
         if let amount = amountCell?.textField.text?.replacingOccurrences(of: ".", with: "") {
-            let data = NeoProductDetailSelectionModel(amount: amount)
+            let data = NeoProductDetailSelectionModel(amount: Double(amount) ?? 0)
             router?.presentPaymentPage(with: data)
         }
     }

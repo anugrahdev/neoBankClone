@@ -17,7 +17,8 @@ class NeoProductOpeningTableViewCell: UITableViewCell {
         button.backgroundColor = UIColor.NeoTintColor
         button.layer.cornerRadius = 20
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(NeoProductOpeningTableViewCell.self, action: #selector(openButtonDidTap), for: .touchUpInside)
+        // Change the target to self
+        button.addTarget(self, action: #selector(openButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -56,7 +57,8 @@ class NeoProductOpeningTableViewCell: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         button.isPointerInteractionEnabled = true
-        button.addTarget(NeoProductOpeningTableViewCell.self, action: #selector(openWebView), for: .touchUpInside)
+        // Change the target to self
+        button.addTarget(self, action: #selector(openWebView), for: .touchUpInside)
         return button
     }()
     
@@ -106,7 +108,6 @@ class NeoProductOpeningTableViewCell: UITableViewCell {
         checkBoxButton.layer.borderColor = isChecked ? UIColor.white.cgColor : UIColor.systemGray.cgColor
         
         delegate?.validateOpenButton(isTncChecked: isChecked)
-
     }
     
     func setOpenButtonCondition(isEnabled: Bool) {
