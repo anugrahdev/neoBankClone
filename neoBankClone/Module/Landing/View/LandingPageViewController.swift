@@ -14,15 +14,8 @@ protocol LandingPageViewControllerLogic: AnyObject {
 class LandingPageViewController: UIViewController {
 
     var interactor: LandingPageInteractorLogic?
+    var router: LandingPageRouterLogic?
 
-    private let headerLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Wealth"
-        label.font = UIFont.boldSystemFont(ofSize: 24)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     private let titleLabel: UILabel = {
         let label = UILabel.makeTitleLabel()
         label.text = "Fleksibel"
@@ -74,7 +67,7 @@ class LandingPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.applyTheme()
         setupUI()
         setupSegmentedControlUnderline()
         fetchProducts()
@@ -88,7 +81,8 @@ class LandingPageViewController: UIViewController {
     }
 
     private func setupUI() {
-        view.addSubview(headerLabel)
+        setNavigationBarTitle(title: "Wealth", isCentered: false)
+
         view.addSubview(titleLabel)
         view.addSubview(segmentedControl)
         view.addSubview(tableView)
@@ -101,10 +95,7 @@ class LandingPageViewController: UIViewController {
         tableView.clipsToBounds = true
 
         NSLayoutConstraint.activate([
-            headerLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            headerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-
-            segmentedControl.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 16),
+            segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             segmentedControl.heightAnchor.constraint(equalToConstant: 30),
@@ -181,5 +172,11 @@ extension LandingPageViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "NeoProductTableViewCell", for: indexPath) as! NeoProductTableViewCell
         cell.configure(with: data)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let data = displayedProducts[indexPath.row].product else { return }
+        tableView.deselectRow(at: indexPath, animated: true)
+        router?.presentProductDetailPage(product: data)
     }
 }

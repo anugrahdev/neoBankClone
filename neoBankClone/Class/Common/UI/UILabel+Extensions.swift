@@ -19,7 +19,7 @@ extension UILabel {
         return label
     }
 
-    static func makeSubtitleLabel(text: String? = nil, fontSize: CGFloat = 12, weight: UIFont.Weight = .regular, textColor: UIColor = .NeoSubtitleColor) -> UILabel {
+    static func makeSubtitleLabel(text: String? = nil, fontSize: CGFloat = 12, weight: UIFont.Weight = .medium, textColor: UIColor = .NeoSubtitleColor) -> UILabel {
         let label = UILabel()
         label.text = text
         label.font = UIFont.systemFont(ofSize: fontSize, weight: weight)
@@ -28,7 +28,7 @@ extension UILabel {
         return label
     }
     
-    static func makeRegularLabel(text: String? = nil, fontSize: CGFloat = 14, weight: UIFont.Weight = .regular, textColor: UIColor = .NeoTitleColor) -> UILabel {
+    static func makeRegularLabel(text: String? = nil, fontSize: CGFloat = 14, weight: UIFont.Weight = .medium, textColor: UIColor = .NeoTitleColor) -> UILabel {
         let label = UILabel()
         label.text = text
         label.font = UIFont.systemFont(ofSize: fontSize, weight: weight)

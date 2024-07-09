@@ -33,6 +33,14 @@ extension UIColor {
     class var NeoOrange: UIColor {
         return UIColor(rgb: 0xf8541c)
     }
+    
+    class var NeoBackgroundColor: UIColor {
+        return UIColor(rgb: 0xffffff)
+    }
+    
+    class var NeoGreyolor: UIColor {
+        return UIColor(rgb: 0xf5f5f5)
+    }
 }
 
 extension UIColor {

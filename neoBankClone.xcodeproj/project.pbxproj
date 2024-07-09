@@ -26,6 +26,31 @@
 		65B2A5522C39953F00F14762 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5512C39953F00F14762 /* UIColor+Extensions.swift */; };
 		65B2A5542C39A1A100F14762 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5532C39A1A100F14762 /* UILabel+Extensions.swift */; };
 		65B2A5562C39A3F700F14762 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5552C39A3F700F14762 /* Int+Extensions.swift */; };
+		65B2A55B2C3A596A00F14762 /* ProductDetailPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A55A2C3A596A00F14762 /* ProductDetailPageRouter.swift */; };
+		65B2A55D2C3A597200F14762 /* ProductDetailPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A55C2C3A597200F14762 /* ProductDetailPageInteractor.swift */; };
+		65B2A55F2C3A598000F14762 /* ProductDetailPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A55E2C3A598000F14762 /* ProductDetailPagePresenter.swift */; };
+		65B2A5612C3A5C6700F14762 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5602C3A5C6700F14762 /* ProductDetailViewController.swift */; };
+		65B2A5632C3A61CF00F14762 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5622C3A61CF00F14762 /* Theme.swift */; };
+		65B2A5652C3A628400F14762 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5642C3A628400F14762 /* UIView+Extensions.swift */; };
+		65B2A5682C3A63A400F14762 /* NeoProductDetailHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5672C3A63A400F14762 /* NeoProductDetailHeaderTableViewCell.swift */; };
+		65B2A56A2C3A661400F14762 /* NeoProductDetailAmountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5692C3A661400F14762 /* NeoProductDetailAmountTableViewCell.swift */; };
+		65B2A56C2C3A698C00F14762 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A56B2C3A698C00F14762 /* UIViewController+Extensions.swift */; };
+		65B2A56E2C3A7CB800F14762 /* CustomCellSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A56D2C3A7CB800F14762 /* CustomCellSeparatorView.swift */; };
+		65B2A5702C3A9C4900F14762 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A56F2C3A9C4800F14762 /* UIFont+Extensions.swift */; };
+		65B2A5732C3A9D8000F14762 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65B2A5722C3A9D8000F14762 /* Poppins-Regular.ttf */; };
+		65B2A5752C3AE49400F14762 /* NeoProductRolloverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5742C3AE49400F14762 /* NeoProductRolloverTableViewCell.swift */; };
+		65B2A5772C3AE92B00F14762 /* NeoProductOpeningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A5762C3AE92B00F14762 /* NeoProductOpeningTableViewCell.swift */; };
+		65BAE93F2C3BDD3A0066AD58 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE93E2C3BDD3A0066AD58 /* UITextField+Extensions.swift */; };
+		65BAE9412C3BE8060066AD58 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE9402C3BE8060066AD58 /* Double+Extensions.swift */; };
+		65BAE9432C3C1EDD0066AD58 /* RolloverPopupModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE9422C3C1EDD0066AD58 /* RolloverPopupModalViewController.swift */; };
+		65BAE9462C3C20F00066AD58 /* BottomSheetOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE9452C3C20F00066AD58 /* BottomSheetOptionTableViewCell.swift */; };
+		65BAE9482C3C22340066AD58 /* HalfScreenPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE9472C3C22340066AD58 /* HalfScreenPresentationController.swift */; };
+		65BAE94A2C3C41770066AD58 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE9492C3C41770066AD58 /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		65BAE94D2C3C41A90066AD58 /* NominalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE94C2C3C41A90066AD58 /* NominalCollectionViewCell.swift */; };
+		65BAE9512C3C45A40066AD58 /* NeoProductDetailSelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE9502C3C45A40066AD58 /* NeoProductDetailSelectionModel.swift */; };
+		65BAE9552C3C48AA0066AD58 /* ProductPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE9542C3C48AA0066AD58 /* ProductPaymentViewController.swift */; };
+		65BAE9572C3C48E50066AD58 /* ProductPaymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE9562C3C48E50066AD58 /* ProductPaymentRouter.swift */; };
+		65BAE95B2C3CE5740066AD58 /* NeoProductPaymentHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAE95A2C3CE5740066AD58 /* NeoProductPaymentHeaderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +94,31 @@
 		65B2A5512C39953F00F14762 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		65B2A5532C39A1A100F14762 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		65B2A5552C39A3F700F14762 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		65B2A55A2C3A596A00F14762 /* ProductDetailPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPageRouter.swift; sourceTree = "<group>"; };
+		65B2A55C2C3A597200F14762 /* ProductDetailPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPageInteractor.swift; sourceTree = "<group>"; };
+		65B2A55E2C3A598000F14762 /* ProductDetailPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPagePresenter.swift; sourceTree = "<group>"; };
+		65B2A5602C3A5C6700F14762 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		65B2A5622C3A61CF00F14762 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		65B2A5642C3A628400F14762 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		65B2A5672C3A63A400F14762 /* NeoProductDetailHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoProductDetailHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		65B2A5692C3A661400F14762 /* NeoProductDetailAmountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoProductDetailAmountTableViewCell.swift; sourceTree = "<group>"; };
+		65B2A56B2C3A698C00F14762 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		65B2A56D2C3A7CB800F14762 /* CustomCellSeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellSeparatorView.swift; sourceTree = "<group>"; };
+		65B2A56F2C3A9C4800F14762 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		65B2A5722C3A9D8000F14762 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		65B2A5742C3AE49400F14762 /* NeoProductRolloverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoProductRolloverTableViewCell.swift; sourceTree = "<group>"; };
+		65B2A5762C3AE92B00F14762 /* NeoProductOpeningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoProductOpeningTableViewCell.swift; sourceTree = "<group>"; };
+		65BAE93E2C3BDD3A0066AD58 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		65BAE9402C3BE8060066AD58 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		65BAE9422C3C1EDD0066AD58 /* RolloverPopupModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolloverPopupModalViewController.swift; sourceTree = "<group>"; };
+		65BAE9452C3C20F00066AD58 /* BottomSheetOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetOptionTableViewCell.swift; sourceTree = "<group>"; };
+		65BAE9472C3C22340066AD58 /* HalfScreenPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfScreenPresentationController.swift; sourceTree = "<group>"; };
+		65BAE9492C3C41770066AD58 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		65BAE94C2C3C41A90066AD58 /* NominalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NominalCollectionViewCell.swift; sourceTree = "<group>"; };
+		65BAE9502C3C45A40066AD58 /* NeoProductDetailSelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoProductDetailSelectionModel.swift; sourceTree = "<group>"; };
+		65BAE9542C3C48AA0066AD58 /* ProductPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPaymentViewController.swift; sourceTree = "<group>"; };
+		65BAE9562C3C48E50066AD58 /* ProductPaymentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPaymentRouter.swift; sourceTree = "<group>"; };
+		65BAE95A2C3CE5740066AD58 /* NeoProductPaymentHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoProductPaymentHeaderTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				65B2A4F72C3933CE00F14762 /* Payment */,
-				65B2A4F62C3933C000F14762 /* Detail */,
+				65B2A4F62C3933C000F14762 /* DetailProduct */,
 				65B2A4F52C3933BA00F14762 /* Landing */,
 			);
 			path = Module;
@@ -176,16 +226,24 @@
 			path = Landing;
 			sourceTree = "<group>";
 		};
-		65B2A4F62C3933C000F14762 /* Detail */ = {
+		65B2A4F62C3933C000F14762 /* DetailProduct */ = {
 			isa = PBXGroup;
 			children = (
+				65B2A5592C3A594C00F14762 /* Entity */,
+				65B2A5582C3A594800F14762 /* View */,
+				65B2A55A2C3A596A00F14762 /* ProductDetailPageRouter.swift */,
+				65B2A55C2C3A597200F14762 /* ProductDetailPageInteractor.swift */,
+				65B2A55E2C3A598000F14762 /* ProductDetailPagePresenter.swift */,
 			);
-			path = Detail;
+			path = DetailProduct;
 			sourceTree = "<group>";
 		};
 		65B2A4F72C3933CE00F14762 /* Payment */ = {
 			isa = PBXGroup;
 			children = (
+				65BAE9532C3C488D0066AD58 /* View */,
+				65BAE9522C3C48880066AD58 /* Entity */,
+				65BAE9562C3C48E50066AD58 /* ProductPaymentRouter.swift */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -201,6 +259,7 @@
 		65B2A4F92C39340F00F14762 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				65B2A5712C3A9D5900F14762 /* Font */,
 				65B2A4CA2C391A3D00F14762 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -221,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				65B2A5552C39A3F700F14762 /* Int+Extensions.swift */,
+				65BAE9402C3BE8060066AD58 /* Double+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -231,6 +291,14 @@
 				65B2A54C2C398DE400F14762 /* DynamicTableView.swift */,
 				65B2A5512C39953F00F14762 /* UIColor+Extensions.swift */,
 				65B2A5532C39A1A100F14762 /* UILabel+Extensions.swift */,
+				65B2A5622C3A61CF00F14762 /* Theme.swift */,
+				65B2A5642C3A628400F14762 /* UIView+Extensions.swift */,
+				65B2A56B2C3A698C00F14762 /* UIViewController+Extensions.swift */,
+				65B2A56D2C3A7CB800F14762 /* CustomCellSeparatorView.swift */,
+				65B2A56F2C3A9C4800F14762 /* UIFont+Extensions.swift */,
+				65BAE93E2C3BDD3A0066AD58 /* UITextField+Extensions.swift */,
+				65BAE9472C3C22340066AD58 /* HalfScreenPresentationController.swift */,
+				65BAE9492C3C41770066AD58 /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -275,6 +343,85 @@
 				65B2A54F2C398E2100F14762 /* NeoProductTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		65B2A5582C3A594800F14762 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				65B2A5662C3A638200F14762 /* Cells */,
+				65B2A5602C3A5C6700F14762 /* ProductDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		65B2A5592C3A594C00F14762 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				65BAE9502C3C45A40066AD58 /* NeoProductDetailSelectionModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		65B2A5662C3A638200F14762 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				65BAE94B2C3C41920066AD58 /* Amount */,
+				65BAE9442C3C20D70066AD58 /* RolloverModal */,
+				65B2A5672C3A63A400F14762 /* NeoProductDetailHeaderTableViewCell.swift */,
+				65B2A5692C3A661400F14762 /* NeoProductDetailAmountTableViewCell.swift */,
+				65B2A5742C3AE49400F14762 /* NeoProductRolloverTableViewCell.swift */,
+				65B2A5762C3AE92B00F14762 /* NeoProductOpeningTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		65B2A5712C3A9D5900F14762 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				65B2A5722C3A9D8000F14762 /* Poppins-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		65BAE9442C3C20D70066AD58 /* RolloverModal */ = {
+			isa = PBXGroup;
+			children = (
+				65BAE9422C3C1EDD0066AD58 /* RolloverPopupModalViewController.swift */,
+				65BAE9452C3C20F00066AD58 /* BottomSheetOptionTableViewCell.swift */,
+			);
+			path = RolloverModal;
+			sourceTree = "<group>";
+		};
+		65BAE94B2C3C41920066AD58 /* Amount */ = {
+			isa = PBXGroup;
+			children = (
+				65BAE94C2C3C41A90066AD58 /* NominalCollectionViewCell.swift */,
+			);
+			path = Amount;
+			sourceTree = "<group>";
+		};
+		65BAE9522C3C48880066AD58 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		65BAE9532C3C488D0066AD58 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				65BAE9582C3CE54F0066AD58 /* Cells */,
+				65BAE9542C3C48AA0066AD58 /* ProductPaymentViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		65BAE9582C3CE54F0066AD58 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				65BAE95A2C3CE5740066AD58 /* NeoProductPaymentHeaderTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +529,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65B2A4CB2C391A3D00F14762 /* Assets.xcassets in Resources */,
+				65B2A5732C3A9D8000F14762 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,19 +554,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B2A5652C3A628400F14762 /* UIView+Extensions.swift in Sources */,
+				65B2A55F2C3A598000F14762 /* ProductDetailPagePresenter.swift in Sources */,
+				65B2A5682C3A63A400F14762 /* NeoProductDetailHeaderTableViewCell.swift in Sources */,
 				65B2A4C22C391A3C00F14762 /* AppDelegate.swift in Sources */,
+				65B2A56C2C3A698C00F14762 /* UIViewController+Extensions.swift in Sources */,
 				65B2A5482C393FCD00F14762 /* RestApiServices.swift in Sources */,
+				65B2A55B2C3A596A00F14762 /* ProductDetailPageRouter.swift in Sources */,
 				65B2A54D2C398DE400F14762 /* DynamicTableView.swift in Sources */,
+				65B2A55D2C3A597200F14762 /* ProductDetailPageInteractor.swift in Sources */,
+				65BAE9412C3BE8060066AD58 /* Double+Extensions.swift in Sources */,
 				65B2A5522C39953F00F14762 /* UIColor+Extensions.swift in Sources */,
+				65B2A5702C3A9C4900F14762 /* UIFont+Extensions.swift in Sources */,
+				65B2A5752C3AE49400F14762 /* NeoProductRolloverTableViewCell.swift in Sources */,
+				65BAE94D2C3C41A90066AD58 /* NominalCollectionViewCell.swift in Sources */,
 				65B2A53A2C39355C00F14762 /* LandingPagePresenter.swift in Sources */,
+				65BAE9432C3C1EDD0066AD58 /* RolloverPopupModalViewController.swift in Sources */,
+				65B2A5612C3A5C6700F14762 /* ProductDetailViewController.swift in Sources */,
 				65B2A5462C393D3B00F14762 /* RestApiRequestInput.swift in Sources */,
 				65B2A5542C39A1A100F14762 /* UILabel+Extensions.swift in Sources */,
 				65B2A4C42C391A3C00F14762 /* SceneDelegate.swift in Sources */,
+				65BAE93F2C3BDD3A0066AD58 /* UITextField+Extensions.swift in Sources */,
+				65BAE9512C3C45A40066AD58 /* NeoProductDetailSelectionModel.swift in Sources */,
+				65BAE94A2C3C41770066AD58 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				65B2A53C2C39357B00F14762 /* LandingPageRouter.swift in Sources */,
 				65B2A5562C39A3F700F14762 /* Int+Extensions.swift in Sources */,
+				65BAE9552C3C48AA0066AD58 /* ProductPaymentViewController.swift in Sources */,
 				65B2A5422C393CEA00F14762 /* RestApiRequest.swift in Sources */,
+				65BAE9572C3C48E50066AD58 /* ProductPaymentRouter.swift in Sources */,
 				65B2A4F32C391B3500F14762 /* LandingPageViewController.swift in Sources */,
+				65B2A5772C3AE92B00F14762 /* NeoProductOpeningTableViewCell.swift in Sources */,
+				65BAE9482C3C22340066AD58 /* HalfScreenPresentationController.swift in Sources */,
+				65BAE95B2C3CE5740066AD58 /* NeoProductPaymentHeaderTableViewCell.swift in Sources */,
+				65BAE9462C3C20F00066AD58 /* BottomSheetOptionTableViewCell.swift in Sources */,
+				65B2A56A2C3A661400F14762 /* NeoProductDetailAmountTableViewCell.swift in Sources */,
+				65B2A56E2C3A7CB800F14762 /* CustomCellSeparatorView.swift in Sources */,
 				65B2A54B2C39528D00F14762 /* NeoProductModel.swift in Sources */,
+				65B2A5632C3A61CF00F14762 /* Theme.swift in Sources */,
 				65B2A5502C398E2100F14762 /* NeoProductTableViewCell.swift in Sources */,
 				65B2A5382C39354900F14762 /* LandingPageInteractor.swift in Sources */,
 			);
