@@ -81,4 +81,3 @@ Jika kamu memiliki pertanyaan atau saran, silakan hubungi saya melalui:
 - [LinkedIn](https://www.linkedin.com/in/anangnugraha/)
 - [Medium](https://anangnugraha.medium.com/)
 - Email: anangnugraha8@gmail.com
-

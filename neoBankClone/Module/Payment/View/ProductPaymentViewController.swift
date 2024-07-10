@@ -9,14 +9,14 @@ import UIKit
 
 
 class ProductPaymentViewController: UIViewController, ProductPaymentViewControllerProtocol {
-
+    
     let sections: [ProductPaymentSection] = ProductPaymentSection.allCases
     var presenter: ProductPaymentPresenterProtocol?
     private var paymentListData: [PaymentMethod] = []
     private var countdownTimer: Timer?
     private var endTime: Date?
     private var paymentData: NeoProductDetailSelectionModel?
-
+    
     enum ProductPaymentSection: String, CaseIterable {
         case header = "header"
         case virtualAccount = "virtualAccount"
@@ -73,7 +73,7 @@ class ProductPaymentViewController: UIViewController, ProductPaymentViewControll
     }()
     
     private let tableView: DynamicTableView = {
-        let tableView = DynamicTableView()
+        let tableView = DynamicTableView(frame: .zero, style: .grouped)
         tableView.register(NeoProductPaymentHeaderTableViewCell.self, forCellReuseIdentifier: "NeoProductPaymentHeaderTableViewCell")
         tableView.register(NeoProductPaymentListTableViewCell.self, forCellReuseIdentifier: "NeoProductPaymentListTableViewCell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -166,7 +166,7 @@ class ProductPaymentViewController: UIViewController, ProductPaymentViewControll
         countdownTimer?.invalidate()
         countdownTimer = nil
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         stopCountdown()
@@ -234,6 +234,32 @@ extension ProductPaymentViewController: UITableViewDelegate, UITableViewDataSour
             cell.delegate = self
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard section == 1 else { return nil }
+        
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 34))
+        headerView.backgroundColor = .clear
+        
+        let label = UILabel.makeTitleLabel()
+        label.text = "Metode Pembayaran lain"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        headerView.addSubview(label)
+        
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 0),
+            label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
+            label.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
+            label.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -8)
+        ])
+        
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 1 ? 34 : 0
     }
     
     func didToggleExpansion(cell: NeoProductPaymentListTableViewCell) {

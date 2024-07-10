@@ -127,7 +127,7 @@ class NeoProductPaymentListTableViewCell: UITableViewCell {
         headerView.backgroundColor = .clear
         
         let label = UILabel.makeSubtitleLabel()
-        label.text = "Kamu bisa bayar dengan kode virtual account dari salah satu bank dibawah. Jika nominal pembayaran lebih besar dari limit transfer satu kali bank yang dipilih, kamu dapat melakukan beberapa kali top up saldo ke rekening Tabungan Reguler atau rekening Tabungan NOW kamu dan melanjutkan pembayaran menggunakan saldomu setelahnya."
+        label.text = StringResources.virtualAccountDesc
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         

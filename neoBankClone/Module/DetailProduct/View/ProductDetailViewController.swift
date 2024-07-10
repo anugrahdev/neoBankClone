@@ -248,6 +248,7 @@ extension ProductDetailViewController: NeoProductRolloverTableViewCellDelegate, 
         let amountCell = tableView.cellForRow(at: IndexPath(row: 0, section: sections.firstIndex(where: { $0 == .amount }) ?? 0)) as? NeoProductDetailAmountTableViewCell
         if let textField = amountCell?.textField {
             amountValidChecker(textField: textField)
+            processInput(textField.text ?? "0")
         }
     }
 }

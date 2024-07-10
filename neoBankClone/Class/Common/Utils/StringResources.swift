@@ -21,4 +21,5 @@ struct StringResources {
     static let rolloverOption = "Opsi Rollover"
     static let principalInterest = "Pokok + Bunga"
     static let notRollover = "Tidak diperpanjang"
+    static let virtualAccountDesc = "Kamu bisa bayar dengan kode virtual account dari salah satu bank dibawah. Jika nominal pembayaran lebih besar dari limit transfer satu kali bank yang dipilih, kamu dapat melakukan beberapa kali top up saldo ke rekening Tabungan Reguler atau rekening Tabungan NOW kamu dan melanjutkan pembayaran menggunakan saldomu setelahnya."
 }
