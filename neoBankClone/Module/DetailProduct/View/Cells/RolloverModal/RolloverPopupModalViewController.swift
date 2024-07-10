@@ -18,14 +18,14 @@ class RolloverPopupModalViewController: UIViewController {
     var selectedOption: String? = "Pokok"
     var selectionHandler: ((String) -> Void)?
 
-    private let titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel.makeTitleLabel()
         label.text = "Opsi Rollover"
         label.textAlignment = .center
         return label
     }()
 
-    private let closeButton: UIButton = {
+    private lazy var closeButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("X", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
@@ -34,14 +34,14 @@ class RolloverPopupModalViewController: UIViewController {
         return button
     }()
 
-    private let tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(BottomSheetOptionTableViewCell.self, forCellReuseIdentifier: "BottomSheetOptionTableViewCell")
         tableView.tableFooterView = UIView()
         return tableView
     }()
 
-    private let backgroundView: UIView = {
+    private lazy var backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         return view

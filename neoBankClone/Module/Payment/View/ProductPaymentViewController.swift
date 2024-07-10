@@ -10,13 +10,13 @@ import UIKit
 
 class ProductPaymentViewController: UIViewController, ProductPaymentViewControllerProtocol {
 
+    let sections: [ProductPaymentSection] = ProductPaymentSection.allCases
     var presenter: ProductPaymentPresenterProtocol?
     private var paymentListData: [PaymentMethod] = []
     private var countdownTimer: Timer?
     private var endTime: Date?
     private var paymentData: NeoProductDetailSelectionModel?
 
-    let sections: [ProductPaymentSection] = ProductPaymentSection.allCases
     enum ProductPaymentSection: String, CaseIterable {
         case header = "header"
         case virtualAccount = "virtualAccount"
@@ -59,7 +59,7 @@ class ProductPaymentViewController: UIViewController, ProductPaymentViewControll
     let secureTransactionLabel: UILabel = {
         let label = UILabel.makeRegularLabel(weight: .semibold, textColor: UIColor.NeoBrownColor)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Transaksimu aman dan terjaga"
+        label.text = StringResources.secure
         label.textAlignment = .center
         return label
     }()

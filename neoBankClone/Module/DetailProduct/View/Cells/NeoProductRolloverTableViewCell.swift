@@ -19,7 +19,7 @@ enum RolloverSelection: String, CaseIterable {
 
 class NeoProductRolloverTableViewCell: UITableViewCell {
     
-    private let stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .center
@@ -28,21 +28,21 @@ class NeoProductRolloverTableViewCell: UITableViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    
-    private let optionLabel: UILabel = {
+
+    private lazy var optionLabel: UILabel = {
         let label = UILabel.makeRegularLabel()
-        label.text = "Opsi Rollover"
+        label.text = "\(StringResources.rolloverOption)"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    private let rightButton: UIButton = {
+
+    private lazy var rightButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Pokok", for: .normal)
+        button.setTitle("\(StringResources.principal)", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         button.translatesAutoresizingMaskIntoConstraints = false
-        
+
         let chevron = UIImage(systemName: "chevron.right")?.withConfiguration(UIImage.SymbolConfiguration(pointSize: 10, weight: .regular))
         button.setImage(chevron, for: .normal)
         button.imageView?.contentMode = .scaleAspectFit

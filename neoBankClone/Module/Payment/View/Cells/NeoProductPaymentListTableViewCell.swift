@@ -18,7 +18,7 @@ class NeoProductPaymentListTableViewCell: UITableViewCell {
     private var channels: [Channel] = []
     private var indexPath: IndexPath?
 
-    private let containerView: UIView = {
+    private lazy var containerView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 10
         view.layer.borderWidth = 1
@@ -28,8 +28,8 @@ class NeoProductPaymentListTableViewCell: UITableViewCell {
         view.backgroundColor = .white
         return view
     }()
-    
-    private let iconImageView: UIImageView = {
+
+    private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "payment")
@@ -37,15 +37,15 @@ class NeoProductPaymentListTableViewCell: UITableViewCell {
         imageView.tintColor = .black
         return imageView
     }()
-    
-    private let titleLabel: UILabel = {
+
+    private lazy var titleLabel: UILabel = {
         let label = UILabel.makeTitleLabel(fontSize: 16, weight: .bold)
         label.text = "Virtual Account"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    private let toggleButton: UIButton = {
+
+    private lazy var toggleButton: UIButton = {
         let button = UIButton(type: .system)
         let chevronDown = UIImage(systemName: "chevron.down")
         button.setImage(chevronDown, for: .normal)
@@ -54,8 +54,8 @@ class NeoProductPaymentListTableViewCell: UITableViewCell {
         button.tintColor = UIColor.NeoSubtitleColor
         return button
     }()
-    
-    private let tableView: DynamicTableView = {
+
+    private lazy var tableView: DynamicTableView = {
         let tableView = DynamicTableView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "InnerCell")
         tableView.isScrollEnabled = false

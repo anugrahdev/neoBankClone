@@ -10,7 +10,7 @@ class NeoProductOpeningTableViewCell: UITableViewCell {
     
     weak var delegate: NeoProductOpeningTableViewCellDelegate?
     
-    private let openButton: UIButton = {
+    private lazy var openButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Buka Sekarang", for: .normal)
         button.setTitleColor(UIColor.NeoTitleColor, for: .normal)
@@ -20,7 +20,7 @@ class NeoProductOpeningTableViewCell: UITableViewCell {
         button.addTarget(self, action: #selector(openButtonDidTap), for: .touchUpInside)
         return button
     }()
-    
+
     private lazy var checkBoxButton: UIButton = {
         let button = UIButton(type: .custom)
         button.backgroundColor = .clear
@@ -31,7 +31,6 @@ class NeoProductOpeningTableViewCell: UITableViewCell {
         button.layer.borderColor = UIColor.systemGray.cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        // Set images for normal and selected states
         button.setImage(UIImage(systemName: "circle"), for: .normal)
         button.setImage(resizedCheckmarkImage(), for: .selected)
         button.tintColor = .systemGray
@@ -39,16 +38,16 @@ class NeoProductOpeningTableViewCell: UITableViewCell {
         button.addTarget(self, action: #selector(toggleCheckbox), for: .touchUpInside)
         return button
     }()
-    
-    private let termsLabel: UILabel = {
+
+    private lazy var termsLabel: UILabel = {
         let label = UILabel.makeRegularLabel(fontSize: 10)
         label.text = "Saya telah membaca dan menyetujui"
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    private let readButton: UIButton = {
+
+    private lazy var readButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("<< Deposito Flexi TnC >>", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)

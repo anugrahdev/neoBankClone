@@ -13,7 +13,9 @@ class ProductPaymentInteractor: ProductPaymentInteractorProtocol {
     var delegate: ProductPaymentInteractorDelegate?
 
     func fetchPaymentData() {
-        self.request?.getPaymentData { (result: RestApiResult<PaymentDataModel>) in
+        self.request?.getPaymentData { [weak self] (result: RestApiResult<PaymentDataModel>) in
+            guard let self = self else { return }
+            
             switch result {
             case .success(let data):
                 self.delegate?.getPaymentDataDidSuccess(data: data)

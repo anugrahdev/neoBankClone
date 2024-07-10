@@ -13,7 +13,9 @@ class LandingPageInteractor: LandingPageInteractorProtocol {
     var presenter: LandingPageInteractorDelegate?
 
     func fetchLandingData() {
-        self.apiRequest?.getLandingData { (result: RestApiResult<NeoProductResponseModel>) in
+        self.apiRequest?.getLandingData { [weak self] (result: RestApiResult<NeoProductResponseModel>) in
+            guard let self = self else { return }
+
             switch result {
             case .success(let data):
                 self.presenter?.presentLandingData(data: data)

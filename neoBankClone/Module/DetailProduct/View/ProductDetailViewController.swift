@@ -204,7 +204,7 @@ extension ProductDetailViewController: NeoProductRolloverTableViewCellDelegate, 
         self.isTncChecked = isTncChecked
         let amountCell = tableView.cellForRow(at: IndexPath(row: 0, section: sections.firstIndex(where: { $0 == .amount }) ?? 0)) as? NeoProductDetailAmountTableViewCell
         let openingCell = tableView.cellForRow(at: IndexPath(row: 0, section: sections.firstIndex(where: { $0 == .button }) ?? 0)) as? NeoProductOpeningTableViewCell
-        let amount = Double(amountCell?.textField.text ?? "0")
+        _ = Double(amountCell?.textField.text ?? "0")
         let isValid = amountCell?.textField.layer.borderWidth == 0
         openingCell?.setOpenButtonCondition(isEnabled: isValid && isTncChecked)
     }
@@ -218,7 +218,7 @@ extension ProductDetailViewController: NeoProductRolloverTableViewCellDelegate, 
     }
 
     func tncButtonDidTapped() {
-        guard let url = URL(string: "https://www.bankneocommerce.co.id/id/home") else {
+        guard let url = URL(string: AppConstants.neoBankURL) else {
             return
         }
         

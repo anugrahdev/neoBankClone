@@ -27,14 +27,14 @@ class NeoProductPaymentHeaderTableViewCell: UITableViewCell {
     
     private let paymentMethodLabel: UILabel = {
         let label = UILabel.makeSubtitleLabel()
-        label.text = "Metode Pembayaran"
+        label.text = StringResources.paymentMethod
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
     
     private let recommendationLabel: PaddingLabel = {
         let label = PaddingLabel()
-        label.text = "Rekomendasi"
+        label.text = StringResources.recommendation
         label.textColor = .orange
         label.font = UIFont.systemFont(ofSize: 10, weight: .light)
         label.textAlignment = .center
@@ -61,7 +61,7 @@ class NeoProductPaymentHeaderTableViewCell: UITableViewCell {
     
     private let payButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Bayar", for: .normal)
+        button.setTitle(StringResources.pay, for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .NeoTintColor
         button.layer.cornerRadius = 10

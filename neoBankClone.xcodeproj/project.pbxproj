@@ -10,6 +10,11 @@
 		651517ED2C3D9C9700BAFA56 /* ProductPaymentContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651517EC2C3D9C9700BAFA56 /* ProductPaymentContract.swift */; };
 		651517EF2C3DA34700BAFA56 /* ProductDetailPageContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651517EE2C3DA34700BAFA56 /* ProductDetailPageContract.swift */; };
 		651517F12C3DABF600BAFA56 /* LandingPageContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651517F02C3DABF600BAFA56 /* LandingPageContract.swift */; };
+		65867E7E2C3E6C8F005F7E7E /* LandingPageProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65867E7D2C3E6C8F005F7E7E /* LandingPageProductListTableViewCell.swift */; };
+		65867E802C3E78EB005F7E7E /* LandingPageHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65867E7F2C3E78EB005F7E7E /* LandingPageHeaderTableViewCell.swift */; };
+		65867E822C3E8068005F7E7E /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65867E812C3E8068005F7E7E /* UITableViewCell+Extensions.swift */; };
+		65867E842C3E810A005F7E7E /* StringResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65867E832C3E810A005F7E7E /* StringResources.swift */; };
+		65867E862C3E8331005F7E7E /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65867E852C3E8331005F7E7E /* AppConstants.swift */; };
 		65B2A4C22C391A3C00F14762 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A4C12C391A3C00F14762 /* AppDelegate.swift */; };
 		65B2A4C42C391A3C00F14762 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A4C32C391A3C00F14762 /* SceneDelegate.swift */; };
 		65B2A4CB2C391A3D00F14762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B2A4CA2C391A3D00F14762 /* Assets.xcassets */; };
@@ -85,6 +90,11 @@
 		651517EC2C3D9C9700BAFA56 /* ProductPaymentContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPaymentContract.swift; sourceTree = "<group>"; };
 		651517EE2C3DA34700BAFA56 /* ProductDetailPageContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPageContract.swift; sourceTree = "<group>"; };
 		651517F02C3DABF600BAFA56 /* LandingPageContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageContract.swift; sourceTree = "<group>"; };
+		65867E7D2C3E6C8F005F7E7E /* LandingPageProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageProductListTableViewCell.swift; sourceTree = "<group>"; };
+		65867E7F2C3E78EB005F7E7E /* LandingPageHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		65867E812C3E8068005F7E7E /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		65867E832C3E810A005F7E7E /* StringResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringResources.swift; sourceTree = "<group>"; };
+		65867E852C3E8331005F7E7E /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		65B2A4BE2C391A3C00F14762 /* neoBankClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = neoBankClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B2A4C12C391A3C00F14762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65B2A4C32C391A3C00F14762 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -307,8 +317,15 @@
 		65B2A4FB2C39342E00F14762 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				65B2A56B2C3A698C00F14762 /* UIViewController+Extensions.swift */,
+				65B2A5642C3A628400F14762 /* UIView+Extensions.swift */,
+				65BAE93E2C3BDD3A0066AD58 /* UITextField+Extensions.swift */,
+				65B2A56F2C3A9C4800F14762 /* UIFont+Extensions.swift */,
+				65B2A5532C39A1A100F14762 /* UILabel+Extensions.swift */,
+				65B2A5512C39953F00F14762 /* UIColor+Extensions.swift */,
 				65B2A5552C39A3F700F14762 /* Int+Extensions.swift */,
 				65BAE9402C3BE8060066AD58 /* Double+Extensions.swift */,
+				65867E812C3E8068005F7E7E /* UITableViewCell+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -317,14 +334,8 @@
 			isa = PBXGroup;
 			children = (
 				65B2A54C2C398DE400F14762 /* DynamicTableView.swift */,
-				65B2A5512C39953F00F14762 /* UIColor+Extensions.swift */,
-				65B2A5532C39A1A100F14762 /* UILabel+Extensions.swift */,
 				65B2A5622C3A61CF00F14762 /* Theme.swift */,
-				65B2A5642C3A628400F14762 /* UIView+Extensions.swift */,
-				65B2A56B2C3A698C00F14762 /* UIViewController+Extensions.swift */,
 				65B2A56D2C3A7CB800F14762 /* CustomCellSeparatorView.swift */,
-				65B2A56F2C3A9C4800F14762 /* UIFont+Extensions.swift */,
-				65BAE93E2C3BDD3A0066AD58 /* UITextField+Extensions.swift */,
 				65BAE9472C3C22340066AD58 /* HalfScreenPresentationController.swift */,
 				65BAE9492C3C41770066AD58 /* LeftAlignedCollectionViewFlowLayout.swift */,
 				65BAE95C2C3CFD110066AD58 /* PaddingLabel.swift */,
@@ -346,6 +357,8 @@
 		65B2A4FE2C39345B00F14762 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				65867E832C3E810A005F7E7E /* StringResources.swift */,
+				65867E852C3E8331005F7E7E /* AppConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -371,6 +384,8 @@
 			isa = PBXGroup;
 			children = (
 				65B2A54F2C398E2100F14762 /* NeoProductTableViewCell.swift */,
+				65867E7D2C3E6C8F005F7E7E /* LandingPageProductListTableViewCell.swift */,
+				65867E7F2C3E78EB005F7E7E /* LandingPageHeaderTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -610,13 +625,16 @@
 				65B2A5702C3A9C4900F14762 /* UIFont+Extensions.swift in Sources */,
 				65B2A5752C3AE49400F14762 /* NeoProductRolloverTableViewCell.swift in Sources */,
 				65BAE94D2C3C41A90066AD58 /* NominalCollectionViewCell.swift in Sources */,
+				65867E802C3E78EB005F7E7E /* LandingPageHeaderTableViewCell.swift in Sources */,
 				65B2A53A2C39355C00F14762 /* LandingPagePresenter.swift in Sources */,
 				65BAE9652C3D80150066AD58 /* ProductPaymentInteractor.swift in Sources */,
 				65BAE9672C3D82220066AD58 /* JSONDecoder.swift in Sources */,
 				65BAE9692C3D84A80066AD58 /* PaymentDataModel.swift in Sources */,
+				65867E862C3E8331005F7E7E /* AppConstants.swift in Sources */,
 				65BAE9432C3C1EDD0066AD58 /* RolloverPopupModalViewController.swift in Sources */,
 				65B2A5612C3A5C6700F14762 /* ProductDetailViewController.swift in Sources */,
 				65B2A5462C393D3B00F14762 /* RestApiRequestInput.swift in Sources */,
+				65867E822C3E8068005F7E7E /* UITableViewCell+Extensions.swift in Sources */,
 				651517F12C3DABF600BAFA56 /* LandingPageContract.swift in Sources */,
 				65BAE9612C3D6D320066AD58 /* NeoProductPaymentMethodTableViewCell.swift in Sources */,
 				65B2A5542C39A1A100F14762 /* UILabel+Extensions.swift in Sources */,
@@ -630,6 +648,8 @@
 				65B2A5422C393CEA00F14762 /* RestApiRequest.swift in Sources */,
 				65BAE9572C3C48E50066AD58 /* ProductPaymentRouter.swift in Sources */,
 				65B2A4F32C391B3500F14762 /* LandingPageViewController.swift in Sources */,
+				65867E842C3E810A005F7E7E /* StringResources.swift in Sources */,
+				65867E7E2C3E6C8F005F7E7E /* LandingPageProductListTableViewCell.swift in Sources */,
 				651517ED2C3D9C9700BAFA56 /* ProductPaymentContract.swift in Sources */,
 				65B2A5772C3AE92B00F14762 /* NeoProductOpeningTableViewCell.swift in Sources */,
 				65BAE9482C3C22340066AD58 /* HalfScreenPresentationController.swift in Sources */,

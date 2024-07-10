@@ -38,7 +38,7 @@ class NeoProductTableViewCell: UITableViewCell {
     
     lazy var popularLabel: UILabel = {
         let label = UILabel.makeSubtitleLabel(weight: .bold, textColor: .NeoTintColor)
-        label.text = "Populer"
+        label.text = StringResources.populer
         label.font = UIFont.systemFont(ofSize: 10, weight: .bold)
         label.textColor = .white
         label.backgroundColor = .NeoOrange
@@ -132,7 +132,7 @@ class NeoProductTableViewCell: UITableViewCell {
         marketingLabel.text = model.marketingPoints?.joined(separator: "; ")
         percentageLabel.text = "\(model.rate ?? 0)% p.a"
         amountLabel.text = "Rp. \((model.startingAmount ?? 0).formatNumber())"
-        openButton.setTitle("Buka", for: .normal)
+        openButton.setTitle(StringResources.open, for: .normal)
         popularLabel.isHidden = !(model.isPopular ?? false)
     }
     
