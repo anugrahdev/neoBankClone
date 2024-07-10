@@ -85,6 +85,7 @@ class ProductPaymentViewController: UIViewController, ProductPaymentViewControll
     override func viewDidLoad() {
         super.viewDidLoad()
         view.applyTheme()
+        removeBackButtonText()
         presenter?.getPaymentData()
         setupUI()
     }
@@ -236,7 +237,7 @@ extension ProductPaymentViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func didToggleExpansion(cell: NeoProductPaymentListTableViewCell) {
-        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        guard tableView.indexPath(for: cell) != nil else { return }
         tableView.beginUpdates()
         tableView.endUpdates()
     }

@@ -21,6 +21,15 @@ class BottomSheetOptionTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    private let termsLabel: UILabel = {
+        let label = UILabel.makeSubtitleLabel()
+        label.numberOfLines = 0
+        label.font = UIFont.italicSystemFont(ofSize: 12)
+        label.textColor = .gray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
     private lazy var checkBoxButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -66,6 +75,7 @@ class BottomSheetOptionTableViewCell: UITableViewCell {
     private func setupViews() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(descriptionLabel)
+        contentView.addSubview(termsLabel)
         contentView.addSubview(checkBoxButton)
 
         NSLayoutConstraint.activate([
@@ -81,7 +91,11 @@ class BottomSheetOptionTableViewCell: UITableViewCell {
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
             descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+            
+            termsLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 4),
+            termsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            termsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            termsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
         ])
 
         checkBoxButton.addTarget(self, action: #selector(didTapCheckBox), for: .touchUpInside)
@@ -91,9 +105,10 @@ class BottomSheetOptionTableViewCell: UITableViewCell {
         checkBoxTapped?()
     }
 
-    func configure(with option: (String, String), isSelected: Bool) {
+    func configure(with option: (String, String, String), isSelected: Bool) {
         titleLabel.text = option.0
         descriptionLabel.text = option.1
+        termsLabel.text = option.2
         checkBoxButton.isSelected = isSelected
         updateCheckboxAppearance()
     }

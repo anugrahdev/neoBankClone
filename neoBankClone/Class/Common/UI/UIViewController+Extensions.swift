@@ -32,4 +32,10 @@ extension UIViewController {
         ], for: .normal)
         self.navigationItem.rightBarButtonItem = rightButton
     }
+    
+    func removeBackButtonText() {
+        if let topItem = self.navigationController?.navigationBar.topItem {
+            topItem.backButtonTitle = ""
+        }
+    }
 }

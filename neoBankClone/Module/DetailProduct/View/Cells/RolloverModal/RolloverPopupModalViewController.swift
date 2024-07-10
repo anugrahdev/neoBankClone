@@ -7,15 +7,14 @@
 
 import UIKit
 
-class BottomSheetViewController: UIViewController {
+class RolloverPopupModalViewController: UIViewController {
 
     var options = [
-        ("Pokok", "Bunga dikirim ke saldo aktif setelah jatuh tempo. Nilai pokok otomatis diperpanjang dengan jangka waktu deposito yang sama.\nSuku bunga saat ini akan dihitung berdasarkan \"suku bunga dasar + suku bunga tambahan\" dan suku bunga saat roll-over akan dihitung berdasarkan suku bunga yang berlaku di tanggal roll-over."),
-        ("Pokok + Bunga", "Nilai pokok + bunga tomatis diperpanjang dengan jangka waktu deposito yang sama.\nSuku bunga saat ini akan dihitung berdasarkan \"suku bunga dasar + suku bunga tambahan\" dan suku bunga saat roll-over akan dihitung berdasarkan suku bunga yang berlaku di tanggal roll-over."),
-        ("Tidak diperpanjang", "Nilai pokok & bunga otomatis masuk ke saldo aktif setelah lewat jatuh tempo.")
+        ("Pokok", "Bunga dikirim ke saldo aktif setelah jatuh tempo. Nilai pokok otomatis diperpanjang dengan jangka waktu deposito yang sama.", "Suku bunga saat ini akan dihitung berdasarkan \"suku bunga dasar + suku bunga tambahan\" dan suku bunga saat roll-over akan dihitung berdasarkan suku bunga yang berlaku di tanggal roll-over."),
+        ("Pokok + Bunga", "Nilai pokok + bunga otomatis diperpanjang dengan jangka waktu deposito yang sama.", "Suku bunga saat ini akan dihitung berdasarkan \"suku bunga dasar + suku bunga tambahan\" dan suku bunga saat roll-over akan dihitung berdasarkan suku bunga yang berlaku di tanggal roll-over."),
+        ("Tidak diperpanjang", "Nilai pokok & bunga otomatis masuk ke saldo aktif setelah lewat jatuh tempo.", "")
     ]
-    
-    var option = [(String, String)].self
+
     var selectedOption: String? = "Pokok"
     var selectionHandler: ((String) -> Void)?
 
@@ -42,17 +41,37 @@ class BottomSheetViewController: UIViewController {
         return tableView
     }()
 
+    private let backgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        return view
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 10
-        view.clipsToBounds = true
+
+        setupBackgroundView()
         setupLayout()
+        
         tableView.delegate = self
         tableView.dataSource = self
     }
 
+    private func setupBackgroundView() {
+        guard let parentView = view.superview else { return }
+        backgroundView.frame = parentView.bounds
+        parentView.addSubview(backgroundView)
+        parentView.bringSubviewToFront(view)
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleOutsideTap(_:)))
+        backgroundView.addGestureRecognizer(tapGesture)
+    }
+
     private func setupLayout() {
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 10
+        view.clipsToBounds = true
+
         view.addSubview(titleLabel)
         view.addSubview(closeButton)
         view.addSubview(tableView)
@@ -78,9 +97,13 @@ class BottomSheetViewController: UIViewController {
     @objc private func didTapClose() {
         dismiss(animated: true, completion: nil)
     }
+    
+    @objc private func handleOutsideTap(_ sender: UITapGestureRecognizer) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
-extension BottomSheetViewController: UITableViewDelegate, UITableViewDataSource {
+extension RolloverPopupModalViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return options.count

@@ -234,7 +234,7 @@ extension ProductDetailViewController: NeoProductRolloverTableViewCellDelegate, 
     }
     
     func didTapRightButton(rollover: RolloverSelection, completion: @escaping (String) -> Void) {
-        let bottomSheetVC = BottomSheetViewController()
+        let bottomSheetVC = RolloverPopupModalViewController()
         bottomSheetVC.selectedOption = rollover.rawValue
         bottomSheetVC.selectionHandler = { selectedOption in
             completion(selectedOption)

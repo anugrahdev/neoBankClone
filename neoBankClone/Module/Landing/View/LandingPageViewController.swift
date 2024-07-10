@@ -91,7 +91,7 @@ class LandingPageViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(segmentedControl)
         view.addSubview(tableView)
-        view.addSubview(activityIndicator) 
+        view.addSubview(activityIndicator)
 
         tableView.delegate = self
         tableView.dataSource = self
