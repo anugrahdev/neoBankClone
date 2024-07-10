@@ -114,7 +114,7 @@ class LandingPageViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
 
             activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
