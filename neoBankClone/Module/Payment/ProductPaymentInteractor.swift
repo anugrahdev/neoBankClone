@@ -7,22 +7,17 @@
 
 import Foundation
 
-protocol ProductPaymentInteractorLogic: AnyObject {
-  func getPaymentData()
-}
-
-class ProductPaymentInteractor: ProductPaymentInteractorLogic {
+class ProductPaymentInteractor: ProductPaymentInteractorProtocol {
     
     var request: RestApiInputProtocol?
-    var presenter: ProductPaymentPresenterLogic?
+    var delegate: ProductPaymentInteractorDelegate?
 
-    func getPaymentData() {
+    func fetchPaymentData() {
         self.request?.getPaymentData { (result: RestApiResult<PaymentDataModel>) in
             switch result {
             case .success(let data):
-                self.presenter?.presentPaymentData(data: data)
+                self.delegate?.getPaymentDataDidSuccess(data: data)
             case .error(let error):
-                // Handle the error case
                 print("Error: \(error.localizedDescription)")
             }
         }

@@ -7,25 +7,19 @@
 
 import Foundation
 
-protocol LandingPageRouterLogic {
-    static func assembleModule() -> LandingPageViewController
-    func presentProductDetailPage(product: NeoProductModel)
-}
-
-class LandingPageRouter: LandingPageRouterLogic {
+class LandingPageRouter: LandingPageRouterProtocol {
     
     weak var viewController: LandingPageViewController?
     
     static func assembleModule() -> LandingPageViewController {
         let view = LandingPageViewController()
         let interactor = LandingPageInteractor()
-        var presenter = LandingPagePresenter()
         let router = LandingPageRouter()
+        let presenter = LandingPagePresenter(interactor: interactor, router: router)
         
         interactor.apiRequest = RestApiRequest()
         presenter.view = view
-        view.interactor = interactor
-        view.router = router
+        view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
         

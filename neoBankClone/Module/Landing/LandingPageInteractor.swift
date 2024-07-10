@@ -7,17 +7,12 @@
 
 import Foundation
 
-
-protocol LandingPageInteractorLogic: AnyObject {
-  func getLandingData()
-}
-
-class LandingPageInteractor: LandingPageInteractorLogic {
+class LandingPageInteractor: LandingPageInteractorProtocol {
     
     var apiRequest: RestApiInputProtocol?
-    var presenter: LandingPagePresenterLogic?
+    var presenter: LandingPageInteractorDelegate?
 
-    func getLandingData() {
+    func fetchLandingData() {
         self.apiRequest?.getLandingData { (result: RestApiResult<NeoProductResponseModel>) in
             switch result {
             case .success(let data):

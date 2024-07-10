@@ -13,8 +13,7 @@ protocol LandingPageViewControllerLogic: AnyObject {
 
 class LandingPageViewController: UIViewController {
 
-    var interactor: LandingPageInteractorLogic?
-    var router: LandingPageRouterLogic?
+    var presenter: LandingPagePresenterProtocol?
 
     private let titleLabel: UILabel = {
         let label = UILabel.makeTitleLabel()
@@ -60,6 +59,12 @@ class LandingPageViewController: UIViewController {
         tableView.estimatedRowHeight = 200
         return tableView
     }()
+    
+    private let activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        return activityIndicator
+    }()
 
     private var allProducts: [NeoProductWithType] = []
     private var displayedProducts: [NeoProductWithType] = []
@@ -86,6 +91,7 @@ class LandingPageViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(segmentedControl)
         view.addSubview(tableView)
+        view.addSubview(activityIndicator) 
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -107,6 +113,9 @@ class LandingPageViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
 
@@ -129,7 +138,8 @@ class LandingPageViewController: UIViewController {
     }
 
     private func fetchProducts() {
-        interactor?.getLandingData()
+        activityIndicator.startAnimating()
+        presenter?.getLandingData()
     }
 
     @objc private func segmentedControlChanged() {
@@ -158,6 +168,7 @@ extension LandingPageViewController: LandingPageViewControllerLogic {
         DispatchQueue.main.async { [weak self] in
             self?.allProducts = products
             self?.filterProducts()
+            self?.activityIndicator.stopAnimating()
         }
     }
 }
@@ -171,12 +182,13 @@ extension LandingPageViewController: UITableViewDelegate, UITableViewDataSource 
         guard let data = displayedProducts[indexPath.row].product else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: "NeoProductTableViewCell", for: indexPath) as! NeoProductTableViewCell
         cell.configure(with: data)
+        cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let data = displayedProducts[indexPath.row].product else { return }
         tableView.deselectRow(at: indexPath, animated: true)
-        router?.presentProductDetailPage(product: data)
+        presenter?.presentDetailData(products: data)
     }
 }

@@ -16,6 +16,7 @@ class NeoProductPaymentListTableViewCell: UITableViewCell {
     weak var delegate: NeoProductPaymentListTableViewCellDelegate?
     private var isExpanded: Bool = false
     private var channels: [Channel] = []
+    private var indexPath: IndexPath?
 
     private let containerView: UIView = {
         let view = UIView()
@@ -156,7 +157,7 @@ class NeoProductPaymentListTableViewCell: UITableViewCell {
             let chevron = isExpanded ? UIImage(systemName: "chevron.up") : UIImage(systemName: "chevron.down")
             toggleButton.setImage(chevron, for: .normal)
             
-            if isExpanded {
+            if isExpanded, let indexPath = indexPath, indexPath.row == 0 {
                 tableView.tableHeaderView = createInstructionHeaderView()
             } else {
                 tableView.tableHeaderView = nil
@@ -174,7 +175,10 @@ class NeoProductPaymentListTableViewCell: UITableViewCell {
             return
         }
         
-        let headerHeight = createInstructionHeaderView().frame.height
+        var headerHeight = tableView.tableHeaderView?.frame.height ?? 0
+        if let indexPath = indexPath, indexPath.row == 0 {
+            headerHeight = createInstructionHeaderView().frame.height
+        }
         
         let numberOfRows = tableView.numberOfRows(inSection: 0)
         let rowHeight = tableView.rowHeight > 0 ? tableView.rowHeight : 44
@@ -183,9 +187,10 @@ class NeoProductPaymentListTableViewCell: UITableViewCell {
         tableViewHeightConstraint?.constant = headerHeight + totalRowsHeight
     }
     
-    func configure(with data: PaymentMethod) {
+    func configure(with data: PaymentMethod, indexPath: IndexPath) {
         self.titleLabel.text = data.paymentMethod
         self.channels = data.channels
+        self.indexPath = indexPath
         tableView.reloadData()
     }
 }

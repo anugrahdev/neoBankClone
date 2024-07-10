@@ -1,25 +1,65 @@
-//
-//  NeoProductTableViewCell.swift
-//  neoBankClone
-//
-//  Created by Anang Nugraha on 06/07/24.
-//
-
 import UIKit
 
-import UIKit
+protocol NeoProductTableViewCellDelegate: AnyObject {
+    func openButtonDidTap(in cell: NeoProductTableViewCell)
+}
 
 class NeoProductTableViewCell: UITableViewCell {
-
-    // Define UI components
-    let titleLabel = UILabel.makeTitleLabel()
-    let marketingLabel = UILabel.makeSubtitleLabel()
-    let percentageLabel = UILabel.makeGrowthLabel()
-    let amountLabel = UILabel.makeRegularLabel(weight: .bold)
-    let openButton = UIButton(type: .system)
-    let popularLabel = UILabel.makeSubtitleLabel(weight: .bold, textColor: .NeoTintColor)
     
-    let detailStackView = UIStackView()
+    weak var delegate: NeoProductTableViewCellDelegate?
+    
+    lazy var titleLabel: UILabel = {
+        return UILabel.makeTitleLabel()
+    }()
+    
+    lazy var marketingLabel: UILabel = {
+        return UILabel.makeSubtitleLabel()
+    }()
+    
+    lazy var percentageLabel: UILabel = {
+        return UILabel.makeGrowthLabel()
+    }()
+    
+    lazy var amountLabel: UILabel = {
+        return UILabel.makeRegularLabel(weight: .bold)
+    }()
+    
+    lazy var openButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .NeoTintColor
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        button.layer.cornerRadius = 10
+        button.layer.masksToBounds = true
+        button.contentEdgeInsets = UIEdgeInsets(top: 4, left: 10, bottom: 4, right: 10)
+        button.isUserInteractionEnabled = false
+        return button
+    }()
+    
+    lazy var popularLabel: UILabel = {
+        let label = UILabel.makeSubtitleLabel(weight: .bold, textColor: .NeoTintColor)
+        label.text = "Populer"
+        label.font = UIFont.systemFont(ofSize: 10, weight: .bold)
+        label.textColor = .white
+        label.backgroundColor = .NeoOrange
+        label.textAlignment = .center
+        label.layer.cornerRadius = 10
+        label.layer.masksToBounds = true
+        return label
+    }()
+    
+    lazy var detailStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .trailing
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 8
+        stackView.addArrangedSubview(rateStackView)
+        stackView.addArrangedSubview(startingPriceStackView)
+        stackView.addArrangedSubview(openButton)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
     
     lazy var rateStackView: UIStackView = {
         let interestLabel = UILabel.makeSubtitleLabel(text: "Bunga")
@@ -49,7 +89,6 @@ class NeoProductTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         setupView()
     }
     
@@ -58,43 +97,13 @@ class NeoProductTableViewCell: UITableViewCell {
     }
 
     private func setupView() {
-        // Setup popularLabel
-        popularLabel.text = "Populer"
-        popularLabel.font = UIFont.systemFont(ofSize: 10, weight: .bold)
-        popularLabel.textColor = .white
-        popularLabel.backgroundColor = .NeoOrange
-        popularLabel.textAlignment = .center
-        popularLabel.layer.cornerRadius = 10
-        popularLabel.layer.masksToBounds = true
-        popularLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        // Setup detailStackView
-        detailStackView.axis = .horizontal
-        detailStackView.alignment = .trailing
-        detailStackView.distribution = .equalSpacing
-        detailStackView.spacing = 8
-        detailStackView.addArrangedSubview(rateStackView)
-        detailStackView.addArrangedSubview(startingPriceStackView)
-        detailStackView.addArrangedSubview(openButton)
-        
-        // Setup openButton
-        openButton.backgroundColor = .NeoTintColor
-        openButton.setTitleColor(.black, for: .normal)
-        openButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .bold)
-        openButton.layer.cornerRadius = 10
-        openButton.layer.masksToBounds = true
-        openButton.contentEdgeInsets = UIEdgeInsets(top: 4, left: 10, bottom: 4, right: 10)
-        
-        // Add subviews
         contentView.addSubview(titleLabel)
         contentView.addSubview(marketingLabel)
         contentView.addSubview(detailStackView)
         contentView.addSubview(popularLabel)
         
-        // Layout constraints
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         marketingLabel.translatesAutoresizingMaskIntoConstraints = false
-        detailStackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
@@ -115,7 +124,6 @@ class NeoProductTableViewCell: UITableViewCell {
             detailStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
             
             openButton.heightAnchor.constraint(equalToConstant: 25)
-            
         ])
     }
 
@@ -127,4 +135,5 @@ class NeoProductTableViewCell: UITableViewCell {
         openButton.setTitle("Buka", for: .normal)
         popularLabel.isHidden = !(model.isPopular ?? false)
     }
+    
 }

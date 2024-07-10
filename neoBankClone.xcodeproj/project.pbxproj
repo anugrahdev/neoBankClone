@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		651517ED2C3D9C9700BAFA56 /* ProductPaymentContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651517EC2C3D9C9700BAFA56 /* ProductPaymentContract.swift */; };
+		651517EF2C3DA34700BAFA56 /* ProductDetailPageContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651517EE2C3DA34700BAFA56 /* ProductDetailPageContract.swift */; };
+		651517F12C3DABF600BAFA56 /* LandingPageContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651517F02C3DABF600BAFA56 /* LandingPageContract.swift */; };
 		65B2A4C22C391A3C00F14762 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A4C12C391A3C00F14762 /* AppDelegate.swift */; };
 		65B2A4C42C391A3C00F14762 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2A4C32C391A3C00F14762 /* SceneDelegate.swift */; };
 		65B2A4CB2C391A3D00F14762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B2A4CA2C391A3D00F14762 /* Assets.xcassets */; };
@@ -79,6 +82,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		651517EC2C3D9C9700BAFA56 /* ProductPaymentContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPaymentContract.swift; sourceTree = "<group>"; };
+		651517EE2C3DA34700BAFA56 /* ProductDetailPageContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPageContract.swift; sourceTree = "<group>"; };
+		651517F02C3DABF600BAFA56 /* LandingPageContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageContract.swift; sourceTree = "<group>"; };
 		65B2A4BE2C391A3C00F14762 /* neoBankClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = neoBankClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B2A4C12C391A3C00F14762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65B2A4C32C391A3C00F14762 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -238,6 +244,7 @@
 				65B2A5372C39354900F14762 /* LandingPageInteractor.swift */,
 				65B2A5392C39355C00F14762 /* LandingPagePresenter.swift */,
 				65B2A53B2C39357B00F14762 /* LandingPageRouter.swift */,
+				651517F02C3DABF600BAFA56 /* LandingPageContract.swift */,
 			);
 			path = Landing;
 			sourceTree = "<group>";
@@ -250,6 +257,7 @@
 				65B2A55A2C3A596A00F14762 /* ProductDetailPageRouter.swift */,
 				65B2A55C2C3A597200F14762 /* ProductDetailPageInteractor.swift */,
 				65B2A55E2C3A598000F14762 /* ProductDetailPagePresenter.swift */,
+				651517EE2C3DA34700BAFA56 /* ProductDetailPageContract.swift */,
 			);
 			path = DetailProduct;
 			sourceTree = "<group>";
@@ -262,6 +270,7 @@
 				65BAE9562C3C48E50066AD58 /* ProductPaymentRouter.swift */,
 				65BAE9642C3D80150066AD58 /* ProductPaymentInteractor.swift */,
 				65BAE96A2C3D84CA0066AD58 /* ProductPaymentPresenter.swift */,
+				651517EC2C3D9C9700BAFA56 /* ProductPaymentContract.swift */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -608,6 +617,7 @@
 				65BAE9432C3C1EDD0066AD58 /* RolloverPopupModalViewController.swift in Sources */,
 				65B2A5612C3A5C6700F14762 /* ProductDetailViewController.swift in Sources */,
 				65B2A5462C393D3B00F14762 /* RestApiRequestInput.swift in Sources */,
+				651517F12C3DABF600BAFA56 /* LandingPageContract.swift in Sources */,
 				65BAE9612C3D6D320066AD58 /* NeoProductPaymentMethodTableViewCell.swift in Sources */,
 				65B2A5542C39A1A100F14762 /* UILabel+Extensions.swift in Sources */,
 				65B2A4C42C391A3C00F14762 /* SceneDelegate.swift in Sources */,
@@ -620,6 +630,7 @@
 				65B2A5422C393CEA00F14762 /* RestApiRequest.swift in Sources */,
 				65BAE9572C3C48E50066AD58 /* ProductPaymentRouter.swift in Sources */,
 				65B2A4F32C391B3500F14762 /* LandingPageViewController.swift in Sources */,
+				651517ED2C3D9C9700BAFA56 /* ProductPaymentContract.swift in Sources */,
 				65B2A5772C3AE92B00F14762 /* NeoProductOpeningTableViewCell.swift in Sources */,
 				65BAE9482C3C22340066AD58 /* HalfScreenPresentationController.swift in Sources */,
 				65BAE95B2C3CE5740066AD58 /* NeoProductPaymentHeaderTableViewCell.swift in Sources */,
@@ -627,6 +638,7 @@
 				65B2A56A2C3A661400F14762 /* NeoProductDetailAmountTableViewCell.swift in Sources */,
 				65B2A56E2C3A7CB800F14762 /* CustomCellSeparatorView.swift in Sources */,
 				65B2A54B2C39528D00F14762 /* NeoProductModel.swift in Sources */,
+				651517EF2C3DA34700BAFA56 /* ProductDetailPageContract.swift in Sources */,
 				65BAE95D2C3CFD110066AD58 /* PaddingLabel.swift in Sources */,
 				65BAE95F2C3CFFF90066AD58 /* NeoProductPaymentListTableViewCell.swift in Sources */,
 				65B2A5632C3A61CF00F14762 /* Theme.swift in Sources */,

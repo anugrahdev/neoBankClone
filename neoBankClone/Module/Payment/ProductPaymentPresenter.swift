@@ -7,15 +7,23 @@
 
 import Foundation
 
-protocol ProductPaymentPresenterLogic {
-    func presentPaymentData(data: PaymentDataModel)
-}
-
-struct ProductPaymentPresenter: ProductPaymentPresenterLogic {
+class ProductPaymentPresenter: ProductPaymentPresenterProtocol {
     
-    weak var view: ProductPaymentViewControllerProtocol?
+    weak var view: ProductPaymentViewController?
+    var interactor: ProductPaymentInteractorProtocol?
+    var router: ProductPaymentRouterProtocol?
 
     func presentPaymentData(data: PaymentDataModel) {
+        view?.setPaymentListData(with: data)
+    }
+    
+    func getPaymentData() {
+        interactor?.fetchPaymentData()
+    }
+}
+
+extension ProductPaymentPresenter: ProductPaymentInteractorDelegate {
+    func getPaymentDataDidSuccess(data: PaymentDataModel) {
         view?.setPaymentListData(with: data)
     }
 }

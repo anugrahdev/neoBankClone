@@ -17,7 +17,6 @@ class NeoProductOpeningTableViewCell: UITableViewCell {
         button.backgroundColor = UIColor.NeoTintColor
         button.layer.cornerRadius = 20
         button.translatesAutoresizingMaskIntoConstraints = false
-        // Change the target to self
         button.addTarget(self, action: #selector(openButtonDidTap), for: .touchUpInside)
         return button
     }()
@@ -51,13 +50,12 @@ class NeoProductOpeningTableViewCell: UITableViewCell {
     
     private let readButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Deposito Flexi TnC", for: .normal)
+        button.setTitle("<< Deposito Flexi TnC >>", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 10)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         button.isPointerInteractionEnabled = true
-        // Change the target to self
         button.addTarget(self, action: #selector(openWebView), for: .touchUpInside)
         return button
     }()
@@ -92,8 +90,8 @@ class NeoProductOpeningTableViewCell: UITableViewCell {
             termsLabel.topAnchor.constraint(equalTo: openButton.bottomAnchor, constant: 16),
             termsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
             
-            readButton.leadingAnchor.constraint(equalTo: termsLabel.trailingAnchor, constant: 8),
-            readButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            readButton.leadingAnchor.constraint(equalTo: termsLabel.trailingAnchor, constant: 4),
+            readButton.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -16),
             readButton.centerYAnchor.constraint(equalTo: termsLabel.centerYAnchor)
         ])
         

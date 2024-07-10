@@ -7,6 +7,21 @@
 
 import Foundation
 
-struct ProductDetailPagePresenter {
+class ProductDetailPagePresenter: ProductDetailPagePresenterProtocol {
     
+    weak var view: ProductDetailViewController?
+    var router: ProductDetailPageRouterProtocol?
+    let product: NeoProductModel
+
+    init(product: NeoProductModel) {
+        self.product = product
+    }
+    
+    func presentPaymentPage(with data: NeoProductDetailSelectionModel) {
+        router?.pushPaymentPage(with: data)
+    }
+    
+    func didLoad() {
+        view?.product = product
+    }
 }

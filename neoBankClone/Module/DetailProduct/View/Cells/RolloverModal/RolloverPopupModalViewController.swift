@@ -31,7 +31,7 @@ class BottomSheetViewController: UIViewController {
         button.setTitle("X", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.setTitleColor(.gray, for: .normal)
-        button.addTarget(BottomSheetViewController.self, action: #selector(didTapClose), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapClose), for: .touchUpInside)
         return button
     }()
 

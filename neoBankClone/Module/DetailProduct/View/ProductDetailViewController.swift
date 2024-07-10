@@ -8,16 +8,12 @@
 import UIKit
 import WebKit
 
-protocol ProductDetailViewControllerProtocol: AnyObject {
-    func setProductData(with product: NeoProductModel)
-}
-
-class ProductDetailViewController: UIViewController, ProductDetailViewControllerProtocol {
+class ProductDetailViewController: UIViewController, ProductDetailPageViewControllerProtocol {
     
-    var router: ProductDetailPageRouterLogic?
+    var presenter: ProductDetailPagePresenterProtocol?
     let sections: [ProductDetailSection] = ProductDetailSection.allCases
     var isTncChecked = false
-    private var product: NeoProductModel?
+    var product: NeoProductModel?
     private let halfScreenTransitionDelegate = HalfScreenTransitionDelegate()
     private var webView: WKWebView?
 
@@ -43,6 +39,7 @@ class ProductDetailViewController: UIViewController, ProductDetailViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         view.applyTheme()
+        presenter?.didLoad()
         setupUI()
     }
     
@@ -71,9 +68,6 @@ class ProductDetailViewController: UIViewController, ProductDetailViewController
         self.view.endEditing(true)
     }
     
-    func setProductData(with product: NeoProductModel) {
-        self.product = product
-    }
     
 }
 
@@ -105,6 +99,7 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
                 cell.configure(with: product, initiateInterest: initiateInterestCalculation.formattedToRupiah() ?? "")
             }
             cell.contentView.isUserInteractionEnabled = false
+            cell.delegate = self
             return cell
         case .rollover:
             let cell = tableView.dequeueReusableCell(withIdentifier: "NeoProductRolloverTableViewCell", for: indexPath) as! NeoProductRolloverTableViewCell
@@ -142,20 +137,27 @@ extension ProductDetailViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        amountValidChecker(textField: textField)
+    }
+    
+    private func amountValidChecker(textField: UITextField) {
         guard let text = textField.text?.replacingOccurrences(of: ".", with: ""), let amount = Double(text) else {
-            textField.layer.borderColor = UIColor.red.cgColor
-            textField.layer.borderWidth = 1.0
+            textField.setBorderValid(false)
             return
         }
         
         if amount.truncatingRemainder(dividingBy: Double(product?.startingAmount ?? 0)) != 0 {
             let openingCell = tableView.cellForRow(at: IndexPath(row: 0, section: sections.firstIndex(where: { $0 == .button }) ?? 0)) as? NeoProductOpeningTableViewCell
+            let amountCell = tableView.cellForRow(at: IndexPath(row: 0, section: sections.firstIndex(where: { $0 == .amount }) ?? 0)) as? NeoProductDetailAmountTableViewCell
             openingCell?.setOpenButtonCondition(isEnabled: false)
             textField.setBorderValid(false)
+            amountCell?.invalidAmountLabel.isHidden = false
         } else {
             let openingCell = tableView.cellForRow(at: IndexPath(row: 0, section: sections.firstIndex(where: { $0 == .button }) ?? 0)) as? NeoProductOpeningTableViewCell
+            let amountCell = tableView.cellForRow(at: IndexPath(row: 0, section: sections.firstIndex(where: { $0 == .amount }) ?? 0)) as? NeoProductDetailAmountTableViewCell
             openingCell?.setOpenButtonCondition(isEnabled: isTncChecked)
             textField.setBorderValid(true)
+            amountCell?.invalidAmountLabel.isHidden = true
         }
     }
     
@@ -197,7 +199,7 @@ extension ProductDetailViewController: UITextFieldDelegate {
    }
 }
 
-extension ProductDetailViewController: NeoProductRolloverTableViewCellDelegate, NeoProductOpeningTableViewCellDelegate {
+extension ProductDetailViewController: NeoProductRolloverTableViewCellDelegate, NeoProductOpeningTableViewCellDelegate, NeoProductDetailAmountTableViewCellProtocol {
     func validateOpenButton(isTncChecked: Bool) {
         self.isTncChecked = isTncChecked
         let amountCell = tableView.cellForRow(at: IndexPath(row: 0, section: sections.firstIndex(where: { $0 == .amount }) ?? 0)) as? NeoProductDetailAmountTableViewCell
@@ -211,7 +213,7 @@ extension ProductDetailViewController: NeoProductRolloverTableViewCellDelegate, 
         let amountCell = tableView.cellForRow(at: IndexPath(row: 0, section: sections.firstIndex(where: { $0 == .amount }) ?? 0)) as? NeoProductDetailAmountTableViewCell
         if let amount = amountCell?.textField.text?.replacingOccurrences(of: ".", with: "") {
             let data = NeoProductDetailSelectionModel(amount: Double(amount) ?? 0)
-            router?.presentPaymentPage(with: data)
+            presenter?.presentPaymentPage(with: data)
         }
     }
 
@@ -240,5 +242,12 @@ extension ProductDetailViewController: NeoProductRolloverTableViewCellDelegate, 
         bottomSheetVC.modalPresentationStyle = .custom
         bottomSheetVC.transitioningDelegate = halfScreenTransitionDelegate
         present(bottomSheetVC, animated: true, completion: nil)
+    }
+    
+    func didAmountOptionSelected() {
+        let amountCell = tableView.cellForRow(at: IndexPath(row: 0, section: sections.firstIndex(where: { $0 == .amount }) ?? 0)) as? NeoProductDetailAmountTableViewCell
+        if let textField = amountCell?.textField {
+            amountValidChecker(textField: textField)
+        }
     }
 }

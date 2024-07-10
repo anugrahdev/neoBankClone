@@ -1,5 +1,9 @@
 import UIKit
 
+protocol NeoProductDetailAmountTableViewCellProtocol: AnyObject {
+    func didAmountOptionSelected()
+}
+
 class NeoProductDetailAmountTableViewCell: UITableViewCell {
         
     let label1: UILabel = {
@@ -16,6 +20,14 @@ class NeoProductDetailAmountTableViewCell: UITableViewCell {
         return label
     }()
     
+    let invalidAmountLabel: UILabel = {
+        let label = UILabel.makeSubtitleLabel(textColor: .red)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.isHidden = true
+        return label
+    }()
+    
     let label3: UILabel = {
         let label = UILabel.makeSubtitleLabel()
         label.attributedText = createAttributedText(for: "Jatuh Tempo: 28/06/2024", boldText: "28/06/2024")
@@ -25,7 +37,7 @@ class NeoProductDetailAmountTableViewCell: UITableViewCell {
     
     let textField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "1000"
+        textField.placeholder = "100000"
         textField.font = UIFont.systemFont(ofSize: 28)
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .roundedRect
@@ -102,6 +114,7 @@ class NeoProductDetailAmountTableViewCell: UITableViewCell {
     
     private let nominalValues = ["1.000.000", "5.000.000", "100.000.000", "500.000.000"]
     private var selectedNominalIndex: IndexPath?
+    weak var delegate: NeoProductDetailAmountTableViewCellProtocol?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -121,6 +134,7 @@ class NeoProductDetailAmountTableViewCell: UITableViewCell {
     private func setupViews() {
         addSubview(label1)
         addSubview(textField)
+        addSubview(invalidAmountLabel)
         addSubview(collectionView)
         addSubview(rightStackView)
         addSubview(bottomStackView)
@@ -137,7 +151,11 @@ class NeoProductDetailAmountTableViewCell: UITableViewCell {
             textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             textField.heightAnchor.constraint(equalToConstant: 60),
             
-            collectionView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 10),
+            invalidAmountLabel.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 4),
+            invalidAmountLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            invalidAmountLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            
+            collectionView.topAnchor.constraint(equalTo: invalidAmountLabel.bottomAnchor, constant: 4),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             collectionView.heightAnchor.constraint(equalToConstant: 60),
@@ -207,6 +225,7 @@ class NeoProductDetailAmountTableViewCell: UITableViewCell {
         textField.text = "\(model.startingAmount?.formattedWithSeparator() ?? "")"
         textField.placeholder = "\(model.startingAmount?.formattedWithSeparator() ?? "")"
         estimasiBungaValueLabel.text = String(describing: initiateInterest)
+        invalidAmountLabel.text = "The amount must be multiple of \(Double(model.startingAmount ?? 0).formattedToRupiah())"
     }
     
     private func formatDate(_ dateString: String) -> String {
@@ -242,7 +261,8 @@ extension NeoProductDetailAmountTableViewCell: UICollectionViewDelegate, UIColle
         let selectedValue = nominalValues[indexPath.row].replacingOccurrences(of: ".", with: "")
         if let selectedValue = Int(selectedValue) {
             textField.text = "\(selectedValue.formattedWithSeparator())"
-            textField.sendActions(for: .editingChanged)
+            textField.sendActions(for: .editingDidEnd)
+            delegate?.didAmountOptionSelected()
         }
         collectionView.reloadData()
     }

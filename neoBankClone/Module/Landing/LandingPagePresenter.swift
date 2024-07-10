@@ -7,14 +7,27 @@
 
 import Foundation
 
-protocol LandingPagePresenterLogic {
-    func presentLandingData(data: NeoProductResponseModel)
+class LandingPagePresenter: LandingPagePresenterProtocol {
+    weak var view: LandingPageViewController?
+    let interactor: LandingPageInteractorProtocol?
+    let router: LandingPageRouterProtocol?
+    
+    func getLandingData() {
+        interactor?.fetchLandingData()
+    }
+    
+    init(view: LandingPageViewController? = nil, interactor: LandingPageInteractorProtocol?, router: LandingPageRouterProtocol?) {
+        self.view = view
+        self.interactor = interactor
+        self.router = router
+    }
+    
+    func presentDetailData(products: NeoProductModel) {
+        router?.presentProductDetailPage(product: products)
+    }
 }
 
-struct LandingPagePresenter: LandingPagePresenterLogic {
-    
-    weak var view: LandingPageViewControllerLogic?
-
+extension LandingPagePresenter: LandingPageInteractorDelegate {
     func presentLandingData(data: NeoProductResponseModel) {
         var products: [NeoProductWithType] = []
         for group in data.data ?? [] {

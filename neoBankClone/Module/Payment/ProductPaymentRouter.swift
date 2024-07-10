@@ -7,26 +7,22 @@
 
 import Foundation
 
-protocol ProductPaymentRouterLogic {
-    static func assembleModule(with data: NeoProductDetailSelectionModel) -> ProductPaymentViewController
-}
-
-class ProductPaymentRouter: ProductPaymentRouterLogic {
+class ProductPaymentRouter: ProductPaymentRouterProtocol {
     weak var viewController: ProductPaymentViewController?
 
     static func assembleModule(with data: NeoProductDetailSelectionModel) -> ProductPaymentViewController {
         let view = ProductPaymentViewController()
         let router = ProductPaymentRouter()
         let interactor = ProductPaymentInteractor()
-        var presenter = ProductPaymentPresenter()
-        interactor.request = RestApiRequest()
-        presenter.view = view
-        view.interactor = interactor
-        view.router = router
-        view.setProductPaymentData(with: data)
-        interactor.presenter = presenter
+        let presenter = ProductPaymentPresenter()
         router.viewController = view
-        
+        interactor.request = RestApiRequest()
+        interactor.delegate = presenter
+        view.presenter = presenter
+        view.setProductPaymentData(with: data)
+        presenter.view = view
+        presenter.interactor = interactor
+        presenter.router = router
         return view
     }
     

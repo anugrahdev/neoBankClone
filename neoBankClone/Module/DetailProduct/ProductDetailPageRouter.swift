@@ -7,26 +7,22 @@
 
 import Foundation
 
-protocol ProductDetailPageRouterLogic {
-    static func assembleModule(with product: NeoProductModel) -> ProductDetailViewController
-    func presentPaymentPage(with data: NeoProductDetailSelectionModel)
-}
-
-class ProductDetailPageRouter: ProductDetailPageRouterLogic {
+class ProductDetailPageRouter: ProductDetailPageRouterProtocol {
     weak var viewController: ProductDetailViewController?
 
     static func assembleModule(with product: NeoProductModel) -> ProductDetailViewController {
         let view = ProductDetailViewController()
         let router = ProductDetailPageRouter()
-        
-        view.router = router
-        view.setProductData(with: product)
+        let presenter = ProductDetailPagePresenter(product: product)
+
         router.viewController = view
-        
+        view.presenter = presenter
+        presenter.view = view
+        presenter.router = router
         return view
     }
     
-    func presentPaymentPage(with data: NeoProductDetailSelectionModel) {
+    func pushPaymentPage(with data: NeoProductDetailSelectionModel) {
         guard let viewController = viewController else {
             return
         }

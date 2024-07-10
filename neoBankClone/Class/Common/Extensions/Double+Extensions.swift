@@ -13,16 +13,22 @@ extension Double {
         formatter.numberStyle = .currency
         formatter.currencyCode = "IDR"
         formatter.currencySymbol = "Rp. "
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 2
         formatter.groupingSeparator = "."
         formatter.decimalSeparator = ","
         formatter.locale = Locale(identifier: "id_ID")
+
+        if self.truncatingRemainder(dividingBy: 1) == 0 {
+            formatter.minimumFractionDigits = 0
+            formatter.maximumFractionDigits = 0
+        } else {
+            formatter.minimumFractionDigits = 2
+            formatter.maximumFractionDigits = 2
+        }
         
         if let formattedString = formatter.string(from: NSNumber(value: self)) {
             return formattedString
         } else {
-            return "Rp. 0,00"
+            return "Rp. 0"
         }
     }
 }

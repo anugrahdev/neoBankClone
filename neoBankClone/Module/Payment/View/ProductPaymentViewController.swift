@@ -7,16 +7,10 @@
 
 import UIKit
 
-protocol ProductPaymentViewControllerProtocol: AnyObject {
-    func setProductPaymentData(with data: NeoProductDetailSelectionModel)
-    func setPaymentListData(with data: PaymentDataModel)
-}
-
 
 class ProductPaymentViewController: UIViewController, ProductPaymentViewControllerProtocol {
 
-    var router: ProductPaymentRouterLogic?
-    var interactor: ProductPaymentInteractorLogic?
+    var presenter: ProductPaymentPresenterProtocol?
     private var paymentListData: [PaymentMethod] = []
     private var countdownTimer: Timer?
     private var endTime: Date?
@@ -91,7 +85,7 @@ class ProductPaymentViewController: UIViewController, ProductPaymentViewControll
     override func viewDidLoad() {
         super.viewDidLoad()
         view.applyTheme()
-        interactor?.getPaymentData()
+        presenter?.getPaymentData()
         setupUI()
     }
     
@@ -161,7 +155,20 @@ class ProductPaymentViewController: UIViewController, ProductPaymentViewControll
     
     private func startCountdown() {
         endTime = Date().addingTimeInterval(24 * 60 * 60) // 24 hours from now
-        countdownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        if countdownTimer == nil {
+            countdownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+            RunLoop.current.add(countdownTimer!, forMode: .common)
+        }
+    }
+    
+    private func stopCountdown() {
+        countdownTimer?.invalidate()
+        countdownTimer = nil
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopCountdown()
     }
     
     @objc private func updateTimer() {
@@ -222,7 +229,7 @@ extension ProductPaymentViewController: UITableViewDelegate, UITableViewDataSour
         case .virtualAccount:
             let payment = paymentListData[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "NeoProductPaymentListTableViewCell", for: indexPath) as! NeoProductPaymentListTableViewCell
-            cell.configure(with: payment)
+            cell.configure(with: payment, indexPath: indexPath)
             cell.delegate = self
             return cell
         }
@@ -233,4 +240,5 @@ extension ProductPaymentViewController: UITableViewDelegate, UITableViewDataSour
         tableView.beginUpdates()
         tableView.endUpdates()
     }
+    
 }
