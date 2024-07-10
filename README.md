@@ -53,57 +53,6 @@ VIPER adalah singkatan dari:
 2. **Skalabilitas**: Memungkinkan pengembangan aplikasi yang lebih besar dan kompleks dengan struktur yang jelas.
 3. **Testabilitas**: Memudahkan penulisan unit test karena setiap komponen memiliki tanggung jawab yang terpisah.
 
-## Struktur Proyek
-Struktur proyek mengikuti pola VIPER dan diorganisasi sebagai berikut:
-
-App
-├── SceneDelegate
-└── AppDelegate
-Module
-├── Payment
-│ ├── View
-│ │ └── Cells
-│ │ ├── NeoProductPaymentHeaderTableViewCell
-│ │ ├── NeoProductPaymentListTableViewCell
-│ │ ├── NeoProductPaymentMethodTableViewCell
-│ │ └── ProductPaymentViewController
-│ ├── Entity
-│ │ ├── PaymentDataModel
-│ │ ├── ProductPaymentRouter
-│ │ ├── ProductPaymentInteractor
-│ │ ├── ProductPaymentPresenter
-│ │ └── ProductPaymentContract
-├── DetailProduct
-│ ├── Entity
-│ ├── View
-│ │ └── Cells
-│ │ ├── Amount
-│ │ │ └── NominalCollectionViewCell
-│ │ └── RolloverModal
-│ │ ├── NeoProductDetailHeaderTableViewCell
-│ │ ├── NeoProductDetailAmountTableViewCell
-│ │ ├── NeoProductRolloverTableViewCell
-│ │ └── NeoProductOpeningTableViewCell
-│ └── ProductDetailViewController
-│ ├── ProductDetailPageRouter
-│ ├── ProductDetailPageInteractor
-│ ├── ProductDetailPagePresenter
-│ └── ProductDetailPageContract
-├── Landing
-│ ├── Entity
-│ │ └── NeoProductModel
-│ ├── View
-│ │ ├── LandingPageInteractor
-│ │ ├── LandingPagePresenter
-│ │ ├── LandingPageRouter
-│ │ └── LandingPageContract
-Class
-└── Common
-└── Resources
-├── JSON
-└── Font
-
-
 ## Instalasi
 1. Clone repository ini:
     ```bash
