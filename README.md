@@ -56,7 +56,7 @@ VIPER adalah singkatan dari:
 ## Instalasi
 1. Clone repository ini:
     ```bash
-    git clone https://github.com/username/neoBankClone.git
+    git clone https://github.com/anugrahdev/neoBankClone.git
     ```
 2. Buka proyek di Xcode:
     ```bash
