@@ -67,6 +67,8 @@ VIPER adalah singkatan dari:
 ## Cara Penggunaan
 1. Compile dan jalankan proyek di simulator atau perangkat nyata.
 2. Navigasi melalui aplikasi untuk mengeksplorasi fitur-fitur yang tersedia.
+3. no using any 3rd party Libraries, only using iOS native Framework to reduce compexity
+4. URLSession for network calling
 
 ## Kontribusi
 Kami menyambut kontribusi dari siapa saja. Silakan buka pull request atau ajukan issue untuk diskusi lebih lanjut.
