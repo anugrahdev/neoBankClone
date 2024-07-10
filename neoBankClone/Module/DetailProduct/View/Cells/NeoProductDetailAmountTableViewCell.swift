@@ -6,14 +6,14 @@ protocol NeoProductDetailAmountTableViewCellProtocol: AnyObject {
 
 class NeoProductDetailAmountTableViewCell: UITableViewCell {
         
-    let label1: UILabel = {
+    let enterAmountLabel: UILabel = {
         let label = UILabel.makeTitleLabel()
         label.text = "Masukkan jumlah"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let label2: UILabel = {
+    let minimumLabel: UILabel = {
         let label = UILabel.makeSubtitleLabel()
         label.text = "Minimum deposito Rp100.000"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +28,7 @@ class NeoProductDetailAmountTableViewCell: UITableViewCell {
         return label
     }()
     
-    let label3: UILabel = {
+    let EndingTermLabel: UILabel = {
         let label = UILabel.makeSubtitleLabel()
         label.attributedText = createAttributedText(for: "Jatuh Tempo: 28/06/2024", boldText: "28/06/2024")
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -72,7 +72,7 @@ class NeoProductDetailAmountTableViewCell: UITableViewCell {
     
     // Horizontal StackView for labels on the right
     lazy var rightStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [label2, label3])
+        let stackView = UIStackView(arrangedSubviews: [minimumLabel, EndingTermLabel])
         stackView.axis = .vertical
         stackView.spacing = 5
         stackView.alignment = .leading
@@ -132,7 +132,7 @@ class NeoProductDetailAmountTableViewCell: UITableViewCell {
     }
     
     private func setupViews() {
-        addSubview(label1)
+        addSubview(enterAmountLabel)
         addSubview(textField)
         addSubview(invalidAmountLabel)
         addSubview(collectionView)
@@ -142,11 +142,11 @@ class NeoProductDetailAmountTableViewCell: UITableViewCell {
         textField.enableNumberFormatting()
         
         NSLayoutConstraint.activate([
-            label1.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            label1.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            label1.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            enterAmountLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            enterAmountLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            enterAmountLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             
-            textField.topAnchor.constraint(equalTo: label1.bottomAnchor, constant: 10),
+            textField.topAnchor.constraint(equalTo: enterAmountLabel.bottomAnchor, constant: 10),
             textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             textField.heightAnchor.constraint(equalToConstant: 60),
@@ -217,10 +217,10 @@ class NeoProductDetailAmountTableViewCell: UITableViewCell {
     }
     
     func configure(with model: NeoProductModel, initiateInterest: String) {
-        label2.text = "Minimum deposito Rp \(model.startingAmount ?? 0)"
+        minimumLabel.text = "Minimum deposito Rp \(model.startingAmount ?? 0)"
         if let code = model.code, let newDate = addDurationToCurrentDate(code) {
             let formattedDate = formatDate(newDate)
-            label3.attributedText = NeoProductDetailAmountTableViewCell.createAttributedText(for: "Jatuh Tempo: \(formattedDate)", boldText: "\(formattedDate)")
+            EndingTermLabel.attributedText = NeoProductDetailAmountTableViewCell.createAttributedText(for: "Jatuh Tempo: \(formattedDate)", boldText: "\(formattedDate)")
         }
         textField.text = "\(model.startingAmount?.formattedWithSeparator() ?? "")"
         textField.placeholder = "\(model.startingAmount?.formattedWithSeparator() ?? "")"
